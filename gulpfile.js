@@ -22,7 +22,6 @@ var paths = {
 
 paths.htmlOut = paths.webroot + "*.html";
 paths.sassOut = paths.webroot + "assets/custom/css/";
-//paths.sassSourceMaps = paths.webroot + "assets"
 
 // paths.js = paths.webroot + "js/**/*.js";
 // paths.minJs = paths.webroot + "js/**/*.min.js";
@@ -88,7 +87,7 @@ gulp.task("gen-css", function () {
 		.src(paths.saas)
 		.pipe(sourcemaps.init())	
         .pipe(sass().on('error', sass.logError))
-		.pipe(sourcemaps.write())
-		.pipe(rename('default.css'))
+		.pipe(rename('style.css'))
+		.pipe(sourcemaps.write("."))
         .pipe(gulp.dest(paths.sassOut));
 });
