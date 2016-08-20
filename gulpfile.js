@@ -11,57 +11,60 @@ var gulp = require("gulp"),
 	headerfooter = require('gulp-headerfooter');
 
 var paths = {
-    webroot: "./website/"
+    webroot: "./wwwroot/",
+	header: "./master/header.html",
+	footer: "./master/footer.html",
+	pages: "./pages/"
 };
 
-paths.js = paths.webroot + "js/**/*.js";
-paths.minJs = paths.webroot + "js/**/*.min.js";
-paths.less = paths.webroot + "css/less/**/*.less";
-paths.lessOut = paths.webroot + "css/";
-paths.css = paths.webroot + "css/**/*.css";
-paths.minCss = paths.webroot + "css/**/*.min.css";
-paths.concatJsDest = paths.webroot + "js/site.min.js";
-paths.concatCssDest = paths.webroot + "css/site.min.css";
-paths.cssDest = paths.webroot + "css/min";
+// paths.js = paths.webroot + "js/**/*.js";
+// paths.minJs = paths.webroot + "js/**/*.min.js";
+// paths.less = paths.webroot + "css/less/**/*.less";
+// paths.lessOut = paths.webroot + "css/";
+// paths.css = paths.webroot + "css/**/*.css";
+// paths.minCss = paths.webroot + "css/**/*.min.css";
+// paths.concatJsDest = paths.webroot + "js/site.min.js";
+// paths.concatCssDest = paths.webroot + "css/site.min.css";
+// paths.cssDest = paths.webroot + "css/min";
 
-gulp.task("clean:js", function (cb) {
-    rimraf(paths.concatJsDest, cb);
-});
+// gulp.task("clean:js", function (cb) {
+//     rimraf(paths.concatJsDest, cb);
+// });
 
-gulp.task("clean:css", function (cb) {
-    rimraf(paths.cssDest, cb);
-});
+// gulp.task("clean:css", function (cb) {
+//     rimraf(paths.cssDest, cb);
+// });
 
-gulp.task("clean", ["clean:js", "clean:css"]);
+// gulp.task("clean", ["clean:js", "clean:css"]);
 
-gulp.task("min:js", function () {
-    return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
-        .pipe(concat(paths.concatJsDest))
-        .pipe(uglify())
-        .pipe(gulp.dest("."));
-});
+// gulp.task("min:js", function () {
+//     return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
+//         .pipe(concat(paths.concatJsDest))
+//         .pipe(uglify())
+//         .pipe(gulp.dest("."));
+// });
 
-gulp.task("min:css", ["build-less"], function () {
-    return gulp.src([paths.css, "!" + paths.minCss])
-        .pipe(cssmin())
-        .pipe(rename({
-            suffix: '.min'
-        }))
-        .pipe(gulp.dest(paths.cssDest));
-});
+// gulp.task("min:css", ["build-less"], function () {
+//     return gulp.src([paths.css, "!" + paths.minCss])
+//         .pipe(cssmin())
+//         .pipe(rename({
+//             suffix: '.min'
+//         }))
+//         .pipe(gulp.dest(paths.cssDest));
+// });
 
-// Compiles LESS > CSS 
-gulp.task('build-less', function () {
-    return gulp.src(paths.less)
-        .pipe(less())
-        .pipe(gulp.dest(paths.lessOut));
-});
+// // Compiles LESS > CSS 
+// gulp.task('build-less', function () {
+//     return gulp.src(paths.less)
+//         .pipe(less())
+//         .pipe(gulp.dest(paths.lessOut));
+// });
 
-gulp.task("min", ["min:js", "min:css"]);
+// gulp.task("min", ["min:js", "min:css"]);
 
 gulp.task('default', function () {
-    gulp.src('.')
-        .pipe(headerfooter.header('.ß/app/partials/header.html'))
-        .pipe(headerfooter.footer('./app/partials/footer.html'))
-        .pipe(gulp.dest('./public/'));
+    gulp.src(paths.pages)
+        .pipe(headerfooter.header(paths.header))
+        .pipe(headerfooter.footer(paths.header))
+        .pipe(gulp.dest(paths.webroot));
 });
