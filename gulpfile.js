@@ -17,6 +17,8 @@ var paths = {
 	pages: "./pages/*"
 };
 
+paths.htmlOut = paths.webroot + "*.html";
+
 // paths.js = paths.webroot + "js/**/*.js";
 // paths.minJs = paths.webroot + "js/**/*.min.js";
 // paths.less = paths.webroot + "css/less/**/*.less";
@@ -34,8 +36,6 @@ var paths = {
 // gulp.task("clean:css", function (cb) {
 //     rimraf(paths.cssDest, cb);
 // });
-
-// gulp.task("clean", ["clean:js", "clean:css"]);
 
 // gulp.task("min:js", function () {
 //     return gulp.src([paths.js, "!" + paths.minJs], { base: "." })
@@ -62,9 +62,17 @@ var paths = {
 
 // gulp.task("min", ["min:js", "min:css"]);
 
-gulp.task('default', function () {
+gulp.task('default', ["gen-html"]);
+
+gulp.task('gen-html', ["clean"], function () {
     gulp.src(paths.pages)
         .pipe(headerfooter.header(paths.header))
         .pipe(headerfooter.footer(paths.footer))
         .pipe(gulp.dest(paths.webroot));
+});
+
+gulp.task("clean", ["clean:html"]);
+
+gulp.task("clean:html", function (cb) {
+    rimraf(paths.htmlOut, cb);
 });
