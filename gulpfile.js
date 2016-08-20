@@ -8,16 +8,21 @@ var gulp = require("gulp"),
     rename = require('gulp-rename'),
     less = require('gulp-less'),
     uglify = require("gulp-uglify"),
-	headerfooter = require('gulp-headerfooter');
+	headerfooter = require('gulp-headerfooter'),
+	sass = require('gulp-sass'),
+	sourcemaps = require('gulp-sourcemaps');
 
 var paths = {
     webroot: "./wwwroot/",
 	header: "./master/header.html",
 	footer: "./master/footer.html",
-	pages: "./pages/*"
+	pages: "./pages/*",
+	saas: "./scss/style.scss"
 };
 
 paths.htmlOut = paths.webroot + "*.html";
+paths.sassOut = paths.webroot + "assets/custom/css/";
+//paths.sassSourceMaps = paths.webroot + "assets"
 
 // paths.js = paths.webroot + "js/**/*.js";
 // paths.minJs = paths.webroot + "js/**/*.min.js";
@@ -62,9 +67,9 @@ paths.htmlOut = paths.webroot + "*.html";
 
 // gulp.task("min", ["min:js", "min:css"]);
 
-gulp.task('default', ["gen-html"]);
+gulp.task("default", ["gen-html", "gen-css"]);
 
-gulp.task('gen-html', ["clean"], function () {
+gulp.task("gen-html", ["clean"], function () {
     gulp.src(paths.pages)
         .pipe(headerfooter.header(paths.header))
         .pipe(headerfooter.footer(paths.footer))
@@ -75,4 +80,15 @@ gulp.task("clean", ["clean:html"]);
 
 gulp.task("clean:html", function (cb) {
     rimraf(paths.htmlOut, cb);
+});
+
+
+gulp.task("gen-css", function () {
+	gulp
+		.src(paths.saas)
+		.pipe(sourcemaps.init())	
+        .pipe(sass().on('error', sass.logError))
+		.pipe(sourcemaps.write())
+		.pipe(rename('default.css'))
+        .pipe(gulp.dest(paths.sassOut));
 });
