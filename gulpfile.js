@@ -14,7 +14,7 @@ var paths = {
     webroot: "./wwwroot/",
 	header: "./master/header.html",
 	footer: "./master/footer.html",
-	pages: "./pages/"
+	pages: "./pages/*"
 };
 
 // paths.js = paths.webroot + "js/**/*.js";
@@ -65,6 +65,6 @@ var paths = {
 gulp.task('default', function () {
     gulp.src(paths.pages)
         .pipe(headerfooter.header(paths.header))
-        .pipe(headerfooter.footer(paths.header))
+        .pipe(headerfooter.footer(paths.footer))
         .pipe(gulp.dest(paths.webroot));
 });
