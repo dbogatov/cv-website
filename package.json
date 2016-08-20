@@ -1,0 +1,20 @@
+{
+  "name": "CV-Website",
+  "description": "Dmytro Bogatov's personal website and resume.",
+  "repository": {
+    "type": "git",
+    "url": "https://git.dbogatov.org/dbogatov/CV-Website.git"
+  },
+  "version": "0.1.0",
+  "devDependencies": {
+    "gulp": "3.8.11",
+    "gulp-concat": "2.5.2",
+    "gulp-cssmin": "0.1.7",
+    "gulp-headerfooter": "^1.0.3",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "1.2.0",
+    "rename": "^1.0.3",
+    "rimraf": "2.2.8"
+  }
+}
