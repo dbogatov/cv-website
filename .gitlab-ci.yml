@@ -2,8 +2,8 @@
 # Full project: https://gitlab.com/pages/plain-html
 
 before_script:
-  npm install
-  gulp
+  - npm install
+  - gulp
 
 tidy:
   stage: test
