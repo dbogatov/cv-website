@@ -427,7 +427,7 @@
 
                 // Create a map object, and include the MapTypeId to add
                 // to the map type control.
-                var $latlng = new google.maps.LatLng(52.5075419, 13.4261419),
+                var $latlng = new google.maps.LatLng(42.270906, -71.807786),
                     $mapOptions = {
                         zoom: 13,
                         center: $latlng,
@@ -477,7 +477,7 @@
         m.parentNode.insertBefore(a, m);
     })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-    ga('create', 'UA-40696437-13', 'auto');
+    ga('create', 'UA-65293382-4', 'auto');
     ga('send', 'pageview');
 
 })(jQuery);
