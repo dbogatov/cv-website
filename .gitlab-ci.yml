@@ -8,6 +8,6 @@ before_script:
 tidy:
   stage: test
   script:
-  - tidy wwwroot/*.html
+  - tidy -config tidy.conf -e wwwroot/*.html
   only:
   - master
