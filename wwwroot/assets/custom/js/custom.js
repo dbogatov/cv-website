@@ -379,7 +379,7 @@
 
                 // Submit the form using AJAX.
                 $.post("https://push.dbogatov.org/api/push/dmytro", data)
-				//$.post("http://localhost:5002/api/push/dmytro", data)
+					//$.post("http://localhost:5002/api/push/dmytro", data)
                     .complete(function (response) {
                         // Make sure that the formMessages div has the 'success' class.
                         $(formMessages).removeClass('alert alert-danger');
@@ -392,19 +392,38 @@
                         $('#name').val('');
                         $('#email').val('');
                         $('#message').val('');
-                    })
-                    // .fail(function (data) {
-                    //     // Make sure that the formMessages div has the 'error' class.
-                    //     $(formMessages).removeClass('alert alert-success');
-                    //     $(formMessages).addClass('alert alert-danger');
+                    });
+            });
 
-                    //     // Set the message text.
-                    //     if (data.responseText !== '') {
-                    //         $(formMessages).text(data.responseText);
-                    //     } else {
-                    //         $(formMessages).text('Oops! An error occured and your message could not be sent.');
-                    //     }
-                    // });
+			// Get the form.
+            var newsletter = $('#newsletter');
+
+            // Set up an event listener for the contact form.
+            $(newsletter).submit(function (e) {
+                // Stop the browser from submitting the form.
+                e.preventDefault();
+
+                // Serialize the form data.
+                var formData = $(newsletter).serializeObject();
+
+				var data = {
+					name: "Anonymous",
+					email: formData.ne,
+					message: "Here is my email!",
+					url: window.location.href
+				};
+
+                // Submit the form using AJAX.
+                //$.post("https://push.dbogatov.org/api/push/dmytro", data)
+				$.post("http://localhost:5002/api/push/dmytro", data)
+                    .complete(function (response) {
+
+                        // Set the message text.
+                        $("#ne").val("Got it! Thank you!");
+
+                        // Clear the form.
+                        setTimeout(function () { $('#ne').val('') }, 3000);
+                    });
             });
 
         })();
