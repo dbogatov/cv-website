@@ -414,8 +414,8 @@
 				};
 
                 // Submit the form using AJAX.
-                //$.post("https://push.dbogatov.org/api/push/dmytro", data)
-				$.post("http://localhost:5002/api/push/dmytro", data)
+                $.post("https://push.dbogatov.org/api/push/dmytro", data)
+				//$.post("http://localhost:5002/api/push/dmytro", data)
                     .complete(function (response) {
 
                         // Set the message text.
