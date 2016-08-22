@@ -386,7 +386,7 @@
                         $(formMessages).addClass('alert alert-success');
 
                         // Set the message text.
-                        $(formMessages).text("Your feedabck has been received. Tahnk you!");
+                        $(formMessages).text("Your feedabck has been received. Thank you!");
 
                         // Clear the form.
                         $('#name').val('');
