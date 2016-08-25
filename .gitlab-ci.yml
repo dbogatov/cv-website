@@ -5,9 +5,17 @@ before_script:
   - npm install
   - gulp
 
-tidy:
-  stage: test
+
+test:
   script:
   - tidy -config tidy.conf -e wwwroot/*.html
   only:
   - master
+  
+production:
+  type: deploy
+  script:
+  - curl --request POST 'https://deploy.dbogatov.org/deploy' --data "token=$TOKEN" --data "project=CV-Website"
+  only:
+  - master
+  
