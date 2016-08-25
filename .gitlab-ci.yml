@@ -1,12 +1,11 @@
 # This file is a template, and might need editing before it works on your project.
 # Full project: https://gitlab.com/pages/plain-html
 
-before_script:
+tidy:
+  type: test
+  before_script:
   - npm install
   - gulp
-
-
-test:
   script:
   - tidy -config tidy.conf -e wwwroot/*.html
   only:
@@ -18,4 +17,3 @@ production:
   - curl --request POST 'https://deploy.dbogatov.org/deploy' --data "token=$TOKEN" --data "project=CV-Website"
   only:
   - master
-  
