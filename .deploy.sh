@@ -12,12 +12,10 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd $DIR
 
-REDIRECT=" > /dev/null 2>> deploy.log"
+git fetch origin > /dev/null 2>> deploy.log
+git reset --hard origin/master > /dev/null 2>> deploy.log
 
-git fetch origin $REDIRECT
-git reset --hard origin/master $REDIRECT
-
-npm install $REDIRECT
-gulp $REDIRECT
+npm install > /dev/null 2>> deploy.log
+gulp > /dev/null 2>> deploy.log
 
 curl --request POST 'https://push.dbogatov.org/api/push/deploy' --data "project=CV-Website"
