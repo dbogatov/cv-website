@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# set -e
+set -e
 
 #cd "$(dirname "$0")"
 
@@ -16,7 +16,7 @@ DIR="$( cd -P "$( dirname "$SOURCE" )" && pwd )"
 
 cd $DIR
 
-git fetch --all >> tmp.txt 2>&1
+git fetch origin >> tmp.txt 2>&1
 git reset --hard origin/master >> tmp.txt 2>&1
 
 npm install >> tmp.txt 2>&1
