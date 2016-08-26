@@ -2,7 +2,9 @@
 
 # set -e
 
-cd "$(dirname "$0")"
+#cd "$(dirname "$0")"
+
+cd /var/static/CV-Website/
 
 git fetch --all >> tmp.txt 2>&1
 git reset --hard origin/master >> tmp.txt 2>&1
