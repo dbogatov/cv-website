@@ -18,11 +18,13 @@ var paths = {
 	header: "./master/header.html",
 	footer: "./master/footer.html",
 	pages: "./pages/*",
-	saas: "./scss/style.scss"
+	saas: "./scss/style.scss",
 };
 
 paths.htmlOut = paths.webroot + "*.html";
 paths.sassOut = paths.webroot + "assets/custom/css/";
+
+paths.js = paths.webroot + "assets/custom/js/*";
 
 // paths.js = paths.webroot + "js/**/*.js";
 // paths.minJs = paths.webroot + "js/**/*.min.js";
@@ -63,6 +65,7 @@ paths.sassOut = paths.webroot + "assets/custom/css/";
 gulp.task("watch", function () {
     gulp.watch(paths.pages, ["default"]);
 	gulp.watch(paths.master, ["default"]);
+	gulp.watch(paths.js, ["default"]);
 });
 
 gulp.task("default", ["gen-html", "gen-css"]);

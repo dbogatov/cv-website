@@ -1,4 +1,4 @@
-$(document).ready(function () {
+var portfolio = function () {
 
 
 	// we are on a portfolio page	
@@ -175,7 +175,7 @@ $(document).ready(function () {
 				maxHeight = height > maxHeight ? height : maxHeight;
 			});
 
-			$(".thumbnail").height(maxHeight);		
+			$(".thumbnail").height(maxHeight);
 
 			var height = $(".thumbnail").first().height();
 			$(".fixHeight").each(function (index, element) {
@@ -185,4 +185,7 @@ $(document).ready(function () {
 		$(window).resize(resizeHandler);
 	}
 
-});
+};
+
+$(document).ready(portfolio);
+$(document).on('pjax:complete', portfolio);
