@@ -14,6 +14,7 @@ var gulp = require("gulp"),
 
 var paths = {
     webroot: "./wwwroot/",
+	master: "./master/*",
 	header: "./master/header.html",
 	footer: "./master/footer.html",
 	pages: "./pages/*",
@@ -66,6 +67,13 @@ paths.sassOut = paths.webroot + "assets/custom/css/";
 
 // gulp.task("min", ["min:js", "min:css"]);
 
+
+//Watch task
+gulp.task("watch", function () {
+    gulp.watch(paths.pages, ["default"]);
+	gulp.watch(paths.master, ["default"]);
+});
+
 gulp.task("default", ["gen-html", "gen-css"]);
 
 gulp.task("gen-html", ["clean"], function () {
@@ -85,7 +93,7 @@ gulp.task("clean:html", function (cb) {
 gulp.task("gen-css", function () {
 	gulp
 		.src(paths.saas)
-		.pipe(sourcemaps.init())	
+		.pipe(sourcemaps.init())
         .pipe(sass().on('error', sass.logError))
 		.pipe(rename('style.css'))
 		.pipe(sourcemaps.write("."))
