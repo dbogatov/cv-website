@@ -58,15 +58,6 @@ paths.sassOut = paths.webroot + "assets/custom/css/";
 //         .pipe(gulp.dest(paths.cssDest));
 // });
 
-// // Compiles LESS > CSS 
-// gulp.task('build-less', function () {
-//     return gulp.src(paths.less)
-//         .pipe(less())
-//         .pipe(gulp.dest(paths.lessOut));
-// });
-
-// gulp.task("min", ["min:js", "min:css"]);
-
 
 //Watch task
 gulp.task("watch", function () {
