@@ -128,7 +128,7 @@ var portfolio = function () {
 				})
 
 				$container.fadeIn(300, function () {
-					resizeHandler();
+					setTimeout(resizeHandler, 1500);
 				});
 
 			});
@@ -149,7 +149,7 @@ var portfolio = function () {
 			</div> \
 		");
 
-		setTimeout(function () { renderCards(function (element) { return true }) }, 3000);
+		renderCards(function (element) { return true });
 
 		// filter items on button click
 		$('#isotope-filters').on('click', 'a', function () {
