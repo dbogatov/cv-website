@@ -178,6 +178,8 @@ var portfolio = function () {
 			$(".thumbnail").height(maxHeight);
 
 			var height = $(".thumbnail").first().height();
+			$(".fixHeight").height(0);
+
 			$(".fixHeight").each(function (index, element) {
 				$(element).height(height - $(element).prev().height() - $(element).next().height() - 25);
 			});
