@@ -182,7 +182,11 @@ var portfolio = function () {
 				$(element).height(height - $(element).prev().height() - $(element).next().height() - 25);
 			});
 		}
+
 		$(window).resize(resizeHandler);
+
+		var task = setInterval(resizeHandler, 500);
+		setTimeout(function () { clearInterval(task); }, 3000); 
 	}
 
 };
