@@ -186,9 +186,9 @@ var portfolio = function () {
 		}
 
 		$(window).resize(resizeHandler);
-		$(window).on("load", resizeHandler);
+		//$(window).on("load", resizeHandler);
 		
-		//setTimeout(resizeHandler, 1500);
+		setTimeout(resizeHandler, 1500);
 	}
 
 };
