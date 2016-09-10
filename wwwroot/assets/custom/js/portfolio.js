@@ -186,9 +186,9 @@ var portfolio = function () {
 		}
 
 		$(window).resize(resizeHandler);
-
-		var task = setInterval(resizeHandler, 500);
-		setTimeout(function () { clearInterval(task); }, 3000); 
+		$(window).on("load", resizeHandler);
+		
+		//setTimeout(resizeHandler, 1500);
 	}
 
 };
