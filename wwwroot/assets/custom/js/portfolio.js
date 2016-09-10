@@ -135,7 +135,7 @@ var portfolio = function () {
 		};
 
 		var template = _.template(" \
-			<div class=\"col-sm-4 col-md-3 project-thumbnail <%= projectType %>\" style=\"padding-top:10px\" > \
+			<div class=\"col-sm-6 col-md-4 col-lg-3 project-thumbnail <%= projectType %>\" style=\"padding-top:10px\" > \
 				<div class=\"thumbnail\" style=\"height: 460px\"> \
 					<img src=\"<%= imageSrc %>\" alt=\"Here should have been an image\" style=\"max-height:255px\" class=\"img-rounded\"> \
 					<div class=\"fixHeight\"></div> \
