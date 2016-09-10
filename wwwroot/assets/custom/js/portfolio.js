@@ -128,7 +128,7 @@ var portfolio = function () {
 				})
 
 				$container.fadeIn(300, function () {
-					$(".thumb-image").load(resizeHandler);
+					$('#posts').imagesLoaded(resizeHandler);
 				});
 
 			});
