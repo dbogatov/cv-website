@@ -128,7 +128,7 @@ var portfolio = function () {
 				})
 
 				$container.fadeIn(300, function () {
-					setTimeout(resizeHandler, 1500);
+					$(".thumb-image").load(resizeHandler);
 				});
 
 			});
@@ -137,7 +137,7 @@ var portfolio = function () {
 		var template = _.template(" \
 			<div class=\"col-sm-6 col-md-4 col-lg-3 project-thumbnail <%= projectType %>\" style=\"padding-top:10px\" > \
 				<div class=\"thumbnail\" style=\"height: 460px\"> \
-					<img src=\"<%= imageSrc %>\" alt=\"Here should have been an image\" style=\"max-height:255px\" class=\"img-rounded\"> \
+					<img src=\"<%= imageSrc %>\" alt=\"Here should have been an image\" style=\"max-height:255px\" class=\"img-rounded thumb-image\"> \
 					<div class=\"fixHeight\"></div> \
 					<div class=\"caption\"> \
 						<h3 class=\"projectTitle\"><%= title %></h3> \
