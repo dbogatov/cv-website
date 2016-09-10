@@ -1,12 +1,13 @@
 {
-  "name": "CV-Website",
-  "description": "Dmytro Bogatov's personal website and resume.",
-  "authors": [
-    "Dmytro <dbogatov@wpi.edu>"
-  ],
-  "license": "MIT",
-  "private": true,
-  "devDependencies": {
-    "underscore": "^1.8.3"
-  }
+	"name": "CV-Website",
+	"description": "Dmytro Bogatov's personal website and resume.",
+	"authors": [
+		"Dmytro <dbogatov@wpi.edu>"
+	],
+	"license": "MIT",
+	"private": true,
+	"dependencies": {
+		"imagesloaded": "^4.1.1",
+		"underscore": "^1.8.3"
+	}
 }
