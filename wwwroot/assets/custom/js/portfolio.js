@@ -149,7 +149,7 @@ var portfolio = function () {
 			</div> \
 		");
 
-		renderCards(function (element) { return true });
+		setTimeout(function () { renderCards(function (element) { return true }) }, 3000);
 
 		// filter items on button click
 		$('#isotope-filters').on('click', 'a', function () {
@@ -178,7 +178,7 @@ var portfolio = function () {
 			$(".thumbnail").height(maxHeight);
 
 			var height = maxHeight; //$(".thumbnail").first().height();
-			$(".fixHeight").height(0); 
+			$(".fixHeight").height(0);
 
 			$(".fixHeight").each(function (index, element) {
 				$(element).height(height - $(element).prev().height() - $(element).next().height() - 25);
@@ -187,7 +187,7 @@ var portfolio = function () {
 
 		$(window).resize(resizeHandler);
 		//$(window).on("load", resizeHandler);
-		
+
 		//setTimeout(resizeHandler, 3000);
 	}
 
