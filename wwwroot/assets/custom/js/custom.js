@@ -427,7 +427,7 @@
                 };
 
                 // Submit the form using AJAX.
-                $.post("https://push.dbogatov.org/api/push/dmytro/feedabck", data)
+                $.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
                     //$.post("http://localhost:5002/api/push/dmytro", data)
                     .complete(function(response) {
                         // Make sure that the formMessages div has the 'success' class.
@@ -435,7 +435,7 @@
                         $(formMessages).addClass('alert alert-success');
 
                         // Set the message text.
-                        $(formMessages).text("Your feedabck has been received. Thank you!");
+                        $(formMessages).text("Your feedback has been received. Thank you!");
 
                         // Clear the form.
                         $('#name').val('');
@@ -463,7 +463,7 @@
                 };
 
                 // Submit the form using AJAX.
-                $.post("https://push.dbogatov.org/api/push/dmytro/feedabck", data)
+                $.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
                     //$.post("http://localhost:5002/api/push/dmytro", data)
                     .complete(function(response) {
 
