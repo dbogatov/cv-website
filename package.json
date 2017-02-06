@@ -7,7 +7,7 @@
   },
   "version": "0.1.0",
   "devDependencies": {
-    "gulp": "3.8.11",
+    "gulp": "^3.9.1",
     "gulp-concat": "2.5.2",
     "gulp-cssmin": "0.1.7",
     "gulp-headerfooter": "^1.0.3",

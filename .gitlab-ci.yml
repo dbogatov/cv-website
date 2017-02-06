@@ -1,19 +1,29 @@
-# This file is a template, and might need editing before it works on your project.
-# Full project: https://gitlab.com/pages/plain-html
+image: mhart/alpine-node
 
-tidy:
-  type: test
-  before_script:
-  - npm install
-  - gulp
+stages:
+- build
+- release
+
+build:
+  stage: build
   script:
-  - tidy -config tidy.conf -e wwwroot/*.html
-  only:
-  - master
-  
-production:
-  type: deploy
+#  - printf "{\"Version\":{\"GitHash\":\"%s\"}}" $CI_BUILD_REF > version.json
+  - apk add --update bash
+  - ./build.sh
+  artifacts:
+    expire_in: 30 min
+    paths:
+    - wwwroot
+  tags:
+  - Docker
+
+dockerify:
+  stage: release
+  dependencies:
+  - build
   script:
-  - curl --request POST 'https://deploy.dbogatov.org/deploy' --data "token=$TOKEN" --data "project=CV-Website"
-  only:
-  - master
+  - docker build -t registry.dbogatov.org/dbogatov/cv-website .
+  - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.dbogatov.org
+  - docker push registry.dbogatov.org/dbogatov/cv-website
+  tags:
+  - Shell
