@@ -1,9 +1,11 @@
-FROM alpine
+FROM kyma/docker-nginx
 
 MAINTAINER Dmytro Bogatov
 
-# Create directory for the app source code
-WORKDIR /srv
+# Copy the source
+COPY wwwroot/ /var/www
 
-# Copy the source and restore dependencies
-COPY wwwroot/ ./
+# Copy the NGINX config
+COPY nginx.conf /etc/nginx/sites-enabled/default
+
+CMD "nginx"
