@@ -26,7 +26,12 @@ tidy:
   - http-server wwwroot/ -p 8080 > /dev/null &
   - sleep 5
   script:
-  - curl -Ls http://localhost:8080 | tidy -e
+  - curl -Ls http://localhost:8080/home.html | tidy -e
+  - curl -Ls http://localhost:8080/academics.html | tidy -e
+  - curl -Ls http://localhost:8080/contacts.html | tidy -e
+  - curl -Ls http://localhost:8080/feedback.html | tidy -e
+  - curl -Ls http://localhost:8080/portfolio.html | tidy -e
+  - curl -Ls http://localhost:8080/resume.html | tidy -e
   tags:
   - Docker
   
