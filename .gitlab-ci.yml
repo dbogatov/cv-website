@@ -15,7 +15,7 @@ build:
     paths:
     - wwwroot
   tags:
-  - Docker
+  - docker
 
 tidy:
   image: dbogatov/docker-containers:jekyll-latest
@@ -33,7 +33,7 @@ tidy:
   - curl -Ls http://localhost:8080/portfolio.html | tidy -e
   - curl -Ls http://localhost:8080/resume.html | tidy -e
   tags:
-  - Docker
+  - docker
   
 blc:
   image: dbogatov/docker-containers:jekyll-latest
@@ -46,7 +46,7 @@ blc:
   script:
   - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*"
   tags:
-  - Docker
+  - docker
 
 dockerify:
   stage: release
@@ -57,4 +57,4 @@ dockerify:
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.dbogatov.org
   - docker push registry.dbogatov.org/dbogatov/cv-website
   tags:
-  - Shell
+  - shell
