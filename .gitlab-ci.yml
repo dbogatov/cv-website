@@ -7,7 +7,6 @@ build:
   image: larslarsson/alpine-node-sass
   stage: build
   script:
-#  - printf "{\"Version\":{\"GitHash\":\"%s\"}}" $CI_BUILD_REF > version.json
   - apk add --update bash
   - ./build.sh
   artifacts:
@@ -18,7 +17,7 @@ build:
   - docker
 
 tidy:
-  image: dbogatov/docker-containers:jekyll-latest
+  image: dbogatov/docker-images:tidy-latest
   stage: test
   dependencies:
   - build
@@ -36,7 +35,7 @@ tidy:
   - docker
   
 blc:
-  image: dbogatov/docker-containers:jekyll-latest
+  image: dbogatov/docker-images:blc-latest
   stage: test
   dependencies:
   - build
@@ -44,7 +43,8 @@ blc:
   - http-server wwwroot/ -p 8080 > /dev/null &
   - sleep 5
   script:
-  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*"
+  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee blc.out
+  - "cat blc.out | grep '0 broken.'"
   tags:
   - docker
 

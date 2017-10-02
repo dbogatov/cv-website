@@ -1,11 +1,13 @@
-FROM kyma/docker-nginx
+FROM dbogatov/docker-images:nginx-latest
 
-MAINTAINER Dmytro Bogatov
+MAINTAINER Dmytro Bogatov dmytro@dbogatov.org
+
+WORKDIR /srv
 
 # Copy the source
-COPY wwwroot/ /var/www
+COPY wwwroot/ .
 
 # Copy the NGINX config
-COPY nginx.conf /etc/nginx/sites-enabled/default
+COPY nginx.conf /etc/nginx/conf.d/default.conf
 
-CMD "nginx"
+CMD ["nginx", "-g", "daemon off;"]
