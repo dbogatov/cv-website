@@ -17,7 +17,7 @@ build:
   - docker
 
 put-resume:
-  image: dbogatov/alpine-extras-latest
+  image: dbogatov/docker-images:alpine-extras-latest
   stage: build
   script:
   - ./put-resume.sh
