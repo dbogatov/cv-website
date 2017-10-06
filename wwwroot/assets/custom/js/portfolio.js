@@ -13,7 +13,15 @@ var portfolio = function () {
 
 				[
 					{
-						projectType: "web ios",
+						projectType: "web",
+						imageSrc: "assets/custom/images/status-site.png",
+						title: "Status Site",
+						date: "Present",
+						description: "Sophisticated Web-based system for monitoring infrastructure health",
+						tryRef: "https://status.dbogatov.org"
+					},
+					{
+						projectType: "web",
 						imageSrc: "assets/custom/images/shevastream.png",
 						title: "ShevaStream",
 						date: "Present",
