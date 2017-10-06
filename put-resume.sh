@@ -5,6 +5,7 @@ set -e
 PROJECT_ID="30" # lookup in repo settings
 JOB="artifacts" # change if necessary
 BRANCH="master"
+TOKEN=$1
 
 echo "Downloading artifacts into temporary directory"
 cd `mktemp -d`
