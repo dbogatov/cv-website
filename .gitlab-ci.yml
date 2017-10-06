@@ -50,10 +50,9 @@ blc:
   - docker
 
 put-resume:
-  image: alpine
+  image: dbogatov/alpine-extras-latest
   stage: prerelease
   script:
-  - apk add --update bash unzip curl
   - ./put-resume.sh
   artifacts:
     expire_in: 30 min
