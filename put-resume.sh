@@ -18,6 +18,6 @@ echo "Extracting files"
 unzip artifacts.zip
 
 echo "Moving file"
-mv resume.pdf wwwroot/assets/custom/docs/resume.pdf
+mv resume.pdf $CI_PROJECT_DIR/wwwroot/assets/custom/docs/resume.pdf
 
 echo "Done"
