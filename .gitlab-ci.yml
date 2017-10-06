@@ -62,7 +62,6 @@ blc:
   tags:
   - docker
 
-
 dockerify:
   stage: release
   dependencies:
@@ -74,3 +73,16 @@ dockerify:
   - docker push registry.dbogatov.org/dbogatov/cv-website
   tags:
   - shell
+
+upload-bu:
+  image: dbogatov/docker-images:alpine-extras-latest
+  stage: release
+  dependencies:
+  - build
+  - put-resume
+  script:
+  - cp wwwroot/home.html wwwroot/index.html
+  - sshpass -f <(printf '%s\n' $BUPASS) ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
+  - sshpass -f <(printf '%s\n' $BUPASS) scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
+  tags:
+  - docker
