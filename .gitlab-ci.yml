@@ -20,7 +20,7 @@ put-resume:
   image: dbogatov/docker-images:alpine-extras-latest
   stage: build
   script:
-  - ./put-resume.sh
+  - ./put-resume.sh $AUTHTOKEN
   artifacts:
     expire_in: 30 min
     paths:
