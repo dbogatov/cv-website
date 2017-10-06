@@ -1,7 +1,6 @@
 stages:
 - build
 - test
-- prerelease
 - release
 
 build:
@@ -17,11 +16,24 @@ build:
   tags:
   - docker
 
+put-resume:
+  image: dbogatov/alpine-extras-latest
+  stage: build
+  script:
+  - ./put-resume.sh
+  artifacts:
+    expire_in: 30 min
+    paths:
+    - wwwroot/assets/custom/docs/resume.pdf
+  tags:
+  - docker
+
 tidy:
   image: dbogatov/docker-images:tidy-latest
   stage: test
   dependencies:
   - build
+  - put-resume
   before_script:
   - http-server wwwroot/ -p 8080 > /dev/null &
   - sleep 5
@@ -40,6 +52,7 @@ blc:
   stage: test
   dependencies:
   - build
+  - put-resume
   before_script:
   - http-server wwwroot/ -p 8080 > /dev/null &
   - sleep 5
@@ -49,22 +62,12 @@ blc:
   tags:
   - docker
 
-put-resume:
-  image: dbogatov/alpine-extras-latest
-  stage: prerelease
-  script:
-  - ./put-resume.sh
-  artifacts:
-    expire_in: 30 min
-    paths:
-    - wwwroot
-  tags:
-  - docker
 
 dockerify:
   stage: release
   dependencies:
   - build
+  - put-resume
   script:
   - docker build -t registry.dbogatov.org/dbogatov/cv-website .
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.dbogatov.org
