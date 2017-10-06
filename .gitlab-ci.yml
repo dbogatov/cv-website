@@ -1,6 +1,7 @@
 stages:
 - build
 - test
+- prerelease
 - release
 
 build:
@@ -45,6 +46,19 @@ blc:
   script:
   - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee blc.out
   - "cat blc.out | grep '0 broken.'"
+  tags:
+  - docker
+
+put-resume:
+  image: alpine
+  stage: prerelease
+  script:
+  - apk add --update bash unzip curl
+  - ./put-resume.sh
+  artifacts:
+    expire_in: 30 min
+    paths:
+    - wwwroot
   tags:
   - docker
 
