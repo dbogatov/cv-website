@@ -608,11 +608,21 @@
   background-size: cover;
 }
 .timeline-bg04 {
-  background: url("../images/timeline-4.jpg");
+	background: url("../images/timeline-4.jpg");
+	background-position: center;
+	background-size: cover;
+  }
+  .timeline-bg04-01 {
+	background: url("../images/redwoodeda.png");
+	background-position: center;
+	background-size: cover;
+  }
+.timeline-bg05 {
+  background: url("../images/timeline-5.jpg");
   background-position: center;
   background-size: cover;
 }
-.timeline-bg04-01 {
+.timeline-bg05-01 {
   background: url("../images/bu.jpg");
   background-position: center;
   background-size: cover;
