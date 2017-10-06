@@ -17,6 +17,10 @@ curl \
 echo "Extracting files"
 unzip artifacts.zip
 
+ls
+pwd
+echo $OLDPWD
+
 echo "Moving file"
 mv resume.pdf $OLDPWD/wwwroot/assets/custom/docs/resume.pdf
 
