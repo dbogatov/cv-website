@@ -22,7 +22,8 @@ pwd
 echo $OLDPWD
 
 echo "Moving file"
-cp resume.pdf $OLDPWD/wwwroot/assets/custom/docs/resume.pdf
+mkdir -p $OLDPWD/wwwroot/assets/custom/docs/
+# cp resume.pdf $OLDPWD/wwwroot/assets/custom/docs/resume.pdf
 mv resume.pdf $OLDPWD/wwwroot/assets/custom/docs/resume.pdf
 
 echo "Done"
