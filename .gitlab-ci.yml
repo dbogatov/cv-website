@@ -4,10 +4,9 @@ stages:
 - release
 
 build:
-  image: larslarsson/alpine-node-sass
+  image: dbogatov/docker-images:node-latest
   stage: build
   script:
-  - apk add --update bash
   - ./build.sh
   artifacts:
     expire_in: 30 min
