@@ -34,7 +34,7 @@ var portfolio = function () {
 						title: "Mandelbrot",
 						date: "May, 2016",
 						description: "Mandelbrot fractal interactive generator",
-						tryRef: "https://personal.dbogatov.org/Project/Mandelbrot"
+						tryRef: "https://legacy.dbogatov.org/Project/Mandelbrot"
 					},
 					{
 						projectType: "web",
@@ -50,7 +50,7 @@ var portfolio = function () {
 						title: "Pentago",
 						date: "December, 2015",
 						description: "Pentago game - Webware project",
-						tryRef: "https://personal.dbogatov.org/Project/Pentago"
+						tryRef: "https://legacy.dbogatov.org/Project/Pentago"
 					},
 					{
 						projectType: "ios",
@@ -58,7 +58,7 @@ var portfolio = function () {
 						title: "Banker Game Assistant",
 						date: "February, 2015",
 						description: "This is an iOS application serving as a banker for board games. It keeps track of all your money accounts.",
-						tryRef: "https://personal.dbogatov.org/Project/Banker"
+						tryRef: "https://legacy.dbogatov.org/Project/Banker"
 					},
 					{
 						projectType: "web",
@@ -66,7 +66,7 @@ var portfolio = function () {
 						title: "Minesweeper",
 						date: "September, 2014",
 						description: "The Minsweeper is a Web Application resembling a well-known Microsoft Minesweeper.",
-						tryRef: "https://personal.dbogatov.org/Project/Minesweeper"
+						tryRef: "https://legacy.dbogatov.org/Project/Minesweeper"
 					},
 					{
 						projectType: "ios",
@@ -74,7 +74,7 @@ var portfolio = function () {
 						title: "WPI Event Creator",
 						date: "April, 2014",
 						description: "This is an iOS application allowing WPI students to create appointment events with faculty easily and quickly.",
-						tryRef: "https://personal.dbogatov.org/Project/WPICalendar"
+						tryRef: "https://legacy.dbogatov.org/Project/WPICalendar"
 					}
 				]
 					.filter(predicate)
