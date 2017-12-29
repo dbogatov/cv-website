@@ -33,6 +33,8 @@ put-resume:
 tidy:
   image: dbogatov/docker-images:tidy-latest
   stage: test
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   # - put-resume
@@ -52,6 +54,8 @@ tidy:
 blc:
   image: dbogatov/docker-images:blc-latest
   stage: test
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
