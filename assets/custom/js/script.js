@@ -322,6 +322,22 @@ $(window).resize(function () {
 	}
 });
 
+var all =  function() {
+	$("#credo").text(" \
+		I am a PhD student at Boston University on a Computer Science Data Science program. \
+		My primary interests are Data Science (databases, distributed computing, big data) and Web-development (back-end). \
+		I have started programming in 2010 and I am gradually mastering this skill since then. \
+		So far I have had 2 part-time, 1 full-time \
+		jobs and I have graduated with high distinction from WPI CS program (class of 2017). \
+		Looking forward to new and exciting opportunities. \
+	");	
+
+	$("#catch-phrase").text("Don't find fault, find a remedy.");
+};
+
+$(document).ready(all);
+$(document).on('pjax:complete', all);
+
 $(document).ready(portfolio);
 $(document).on('pjax:complete', portfolio);
 

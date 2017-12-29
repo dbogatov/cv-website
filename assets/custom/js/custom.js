@@ -1,6 +1,22 @@
 (function ($) {
 	'use strict';
 
+	$.fn.serializeObject = function () {
+		var o = {};
+		var a = this.serializeArray();
+		$.each(a, function () {
+			if (o[this.name] !== undefined) {
+				if (!o[this.name].push) {
+					o[this.name] = [o[this.name]];
+				}
+				o[this.name].push(this.value || '');
+			} else {
+				o[this.name] = this.value || '';
+			}
+		});
+		return o;
+	};
+
 	/** Init settings **/
 	(function () {
 		// Setup reveal and ajax loading
@@ -332,6 +348,7 @@
 		/** Contact Form **/
 		(function () {
 			if ($('[data-section="feedback"]').length) {
+
 				// Get the form.
 				var form = $('#ajax-contact');
 
@@ -344,40 +361,82 @@
 					e.preventDefault();
 
 					// Serialize the form data.
-					var formData = $(form).serialize();
+					var formData = $(form).serializeObject();
+
+					var data = {
+						name: formData.name,
+						email: formData.email,
+						message: formData.message,
+						url: window.location.href
+					};
 
 					// Submit the form using AJAX.
-					$.ajax({
-							type: 'POST',
-							url: $(form).attr('action'),
-							data: formData
-						})
-						.done(function (response) {
+					$.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
+						.complete(function (response) {
 							// Make sure that the formMessages div has the 'success' class.
 							$(formMessages).removeClass('alert alert-danger');
 							$(formMessages).addClass('alert alert-success');
 
 							// Set the message text.
-							$(formMessages).text(response);
+							$(formMessages).text("Your feedback has been received. Thank you!");
+
+							$("#form-button").text("Thank you!");
+							$('#form-button').prop('disabled', false);
 
 							// Clear the form.
 							$('#name').val('');
 							$('#email').val('');
 							$('#message').val('');
-						})
-						.fail(function (data) {
-							// Make sure that the formMessages div has the 'error' class.
-							$(formMessages).removeClass('alert alert-success');
-							$(formMessages).addClass('alert alert-danger');
+						});
+
+					$("#form-button").text("Sending...");
+					$('#form-button').prop('disabled', true);
+				});
+
+				$('#footer-contact-button').addClass('disabled');
+				var footerFormHandler = function () {
+					if ($("#footer-contact-email").val() === "") {
+						$('#footer-contact-button').addClass('disabled');
+					} else {
+						$('#footer-contact-button').removeClass('disabled');
+					}
+				};
+
+				$("#footer-contact-email").keypress(footerFormHandler);
+				$("#footer-contact-email").change(footerFormHandler);
+				$("#footer-contact-email").on('paste', function () { window.setTimeout(footerFormHandler, 0)});
+
+				$("#footer-contact-button").click(function (e) {
+					e.preventDefault();
+
+					// Serialize the form data.
+
+					var data = {
+						name: "Anonymous",
+						email: $("#footer-contact-email").val(),
+						message: "Here is my email!",
+						url: window.location.href
+					};
+
+					// Submit the form using AJAX.
+					$.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
+						.complete(function (response) {
 
 							// Set the message text.
-							if (data.responseText !== '') {
-								$(formMessages).text(data.responseText);
-							} else {
-								$(formMessages).text('Oops! An error occured and your message could not be sent.');
-							}
+							$("#footer-contact-email").val("Got it! Thank you!");
+							$("#footer-contact-button").text("Sent")
+							$('#footer-contact-button').removeClass('disabled');
+
+							// Clear the form.
+							// setTimeout(function () {
+							// 	$('#ne').val('')
+							// }, 3000);
 						});
+
+					$("#footer-contact-button").text("Sending")
+					$('#footer-contact-button').addClass('disabled');
 				});
+
 			}
 		})();
 
@@ -418,7 +477,7 @@
 
 					// Create a map object, and include the MapTypeId to add
 					// to the map type control.
-					var $latlng = new google.maps.LatLng(52.5075419, 13.4261419),
+					var $latlng = new google.maps.LatLng(42.352313, -71.121819),
 						$mapOptions = {
 							zoom: 13,
 							center: $latlng,
@@ -565,5 +624,5 @@
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 // set yor id
-ga('create', '', 'auto');
+ga('create', 'UA-65293382-4', 'auto');
 ga('send', 'pageview');
