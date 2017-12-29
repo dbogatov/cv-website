@@ -1,0 +1,48 @@
+/* Main Photo */
+
+.photo-01 {
+  background: url("../../images/me2.jpg");
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 360px;
+}
+
+
+/* Timeline */
+
+.timeline-01, .timeline-02, .timeline-03, .timeline-04 .timeline-05 {
+  -moz-transition: all .5s ease-in-out;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+}
+
+.timeline-01 {
+  background: url("/assets/custom/images/wpi.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.timeline-02 {
+  background: url("/assets/custom/images/tradestation.jpg");
+  background-position: center;
+  background-size: cover;
+}
+
+.timeline-03 {
+  background: url("/assets/custom/images/matters.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.timeline-04 {
+  background: url("/assets/custom/images/redwoodeda.png");
+  background-position: center;
+  background-size: cover;
+}
+
+.timeline-05 {
+  background: url("/assets/custom/images/bu.jpg");
+  background-position: center;
+  background-size: cover;
+}

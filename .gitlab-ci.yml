@@ -4,37 +4,42 @@ stages:
 - release
 
 build:
-  image: dbogatov/docker-images:node-latest
+  image: dbogatov/docker-images:alpine-extras-latest
   stage: build
   script:
+  - printf "%s" $(echo $CI_BUILD_REF | cut -c1-8) > version.txt
   - ./build.sh
   artifacts:
     expire_in: 30 min
     paths:
-    - wwwroot
+    - dist
   tags:
   - docker
 
 put-resume:
   image: dbogatov/docker-images:alpine-extras-latest
   stage: build
+  variables:
+    GIT_STRATEGY: fetch
   script:
-  - ./put-resume.sh $AUTHTOKEN
+  - ./put-resume.sh "$TOKEN"
   artifacts:
     expire_in: 30 min
     paths:
-    - wwwroot/assets/custom/docs/resume.pdf
+    - dist/assets/custom/docs/resume.pdf
   tags:
   - docker
 
 tidy:
   image: dbogatov/docker-images:tidy-latest
   stage: test
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
-  - put-resume
+  # - put-resume
   before_script:
-  - http-server wwwroot/ -p 8080 > /dev/null &
+  - http-server dist/ -p 8080 > /dev/null &
   - sleep 5
   script:
   - curl -Ls http://localhost:8080/home.html | tidy -e
@@ -49,39 +54,42 @@ tidy:
 blc:
   image: dbogatov/docker-images:blc-latest
   stage: test
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
   before_script:
-  - http-server wwwroot/ -p 8080 > /dev/null &
+  - http-server dist/ -p 8080 > /dev/null &
   - sleep 5
   script:
-  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee blc.out
-  - "cat blc.out | grep '0 broken.'"
+  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee /dev/stderr | grep 'Finished!' | tail -1 | grep '0 broken.'
   tags:
   - docker
 
 dockerify:
   stage: release
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
   script:
-  - docker build -t registry.dbogatov.org/dbogatov/cv-website .
+  - docker build -t registry.dbogatov.org/dbogatov/cv-website:dev .
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.dbogatov.org
-  - docker push registry.dbogatov.org/dbogatov/cv-website
+  - docker push registry.dbogatov.org/dbogatov/cv-website:dev
   tags:
   - shell
 
-upload-bu:
-  image: dbogatov/docker-images:alpine-extras-latest
-  stage: release
-  dependencies:
-  - build
-  - put-resume
-  script:
-  - cp wwwroot/home.html wwwroot/index.html
-  - sshpass -f <(printf '%s\n' $BUPASS) ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
-  - sshpass -f <(printf '%s\n' $BUPASS) scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
-  tags:
-  - docker
+# upload-bu:
+#   image: dbogatov/docker-images:alpine-extras-latest
+#   stage: release
+#   dependencies:
+#   - build
+#   - put-resume
+#   script:
+#   - cp wwwroot/home.html wwwroot/index.html
+#   - sshpass -f <(printf '%s\n' $BUPASS) ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
+#   - sshpass -f <(printf '%s\n' $BUPASS) scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
+#   tags:
+#   - docker
