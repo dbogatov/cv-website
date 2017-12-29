@@ -513,7 +513,7 @@
 					initGmap();
 				}
 
-				loadScript('http://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initGmap', 'gmapSrc');
+				loadScript('https://maps.googleapis.com/maps/api/js?v=3&sensor=false&callback=initGmap', 'gmapSrc');
 			}
 		})();
 
