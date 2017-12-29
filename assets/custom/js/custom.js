@@ -392,52 +392,55 @@
 					$("#form-button").text("Sending...");
 					$('#form-button').prop('disabled', true);
 				});
+			}
 
-				$('#footer-contact-button').addClass('disabled');
-				var footerFormHandler = function () {
-					if ($("#footer-contact-email").val() === "") {
-						$('#footer-contact-button').addClass('disabled');
-					} else {
-						$('#footer-contact-button').removeClass('disabled');
-					}
+			$('#footer-contact-button').addClass('disabled');
+			var footerFormHandler = function () {
+				if ($("#footer-contact-email").val() === "") {
+					$('#footer-contact-button').addClass('disabled');
+				} else {
+					$('#footer-contact-button').removeClass('disabled');
+				}
+			};
+
+			$("#footer-contact-email").keypress(footerFormHandler);
+			$("#footer-contact-email").change(footerFormHandler);
+			$("#footer-contact-email").on('paste', function () {
+				window.setTimeout(footerFormHandler, 0)
+			});
+
+			$("#footer-contact-button").click(function (e) {
+
+				e.preventDefault();
+
+				// Serialize the form data.
+
+				var data = {
+					name: "Anonymous",
+					email: $("#footer-contact-email").val(),
+					message: "Here is my email!",
+					url: window.location.href
 				};
 
-				$("#footer-contact-email").keypress(footerFormHandler);
-				$("#footer-contact-email").change(footerFormHandler);
-				$("#footer-contact-email").on('paste', function () { window.setTimeout(footerFormHandler, 0)});
+				// Submit the form using AJAX.
+				$.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
+					.complete(function (response) {
 
-				$("#footer-contact-button").click(function (e) {
-					e.preventDefault();
+						// Set the message text.
+						$("#footer-contact-email").val("Got it! Thank you!");
+						$("#footer-contact-button").text("Sent")
+						$('#footer-contact-button').removeClass('disabled');
 
-					// Serialize the form data.
+						// Clear the form.
+						// setTimeout(function () {
+						// 	$('#ne').val('')
+						// }, 3000);
+					});
 
-					var data = {
-						name: "Anonymous",
-						email: $("#footer-contact-email").val(),
-						message: "Here is my email!",
-						url: window.location.href
-					};
+				$("#footer-contact-button").text("Sending")
+				$('#footer-contact-button').addClass('disabled');
+			});
 
-					// Submit the form using AJAX.
-					$.post("https://push.dbogatov.org/api/push/dmytro/feedback", data)
-						.complete(function (response) {
-
-							// Set the message text.
-							$("#footer-contact-email").val("Got it! Thank you!");
-							$("#footer-contact-button").text("Sent")
-							$('#footer-contact-button').removeClass('disabled');
-
-							// Clear the form.
-							// setTimeout(function () {
-							// 	$('#ne').val('')
-							// }, 3000);
-						});
-
-					$("#footer-contact-button").text("Sending")
-					$('#footer-contact-button').addClass('disabled');
-				});
-
-			}
 		})();
 
 		/** Google map **/
@@ -610,19 +613,19 @@
 
 })(jQuery);
 
-// /** Google Analytics **/
-// (function (i, s, o, g, r, a, m) {
-// 	i['GoogleAnalyticsObject'] = r;
-// 	i[r] = i[r] || function () {
-// 		(i[r].q = i[r].q || []).push(arguments)
-// 	}, i[r].l = 1 * new Date();
-// 	a = s.createElement(o),
-// 		m = s.getElementsByTagName(o)[0];
-// 	a.async = 1;
-// 	a.src = g;
-// 	m.parentNode.insertBefore(a, m)
-// })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+/** Google Analytics **/
+(function (i, s, o, g, r, a, m) {
+	i['GoogleAnalyticsObject'] = r;
+	i[r] = i[r] || function () {
+		(i[r].q = i[r].q || []).push(arguments)
+	}, i[r].l = 1 * new Date();
+	a = s.createElement(o),
+		m = s.getElementsByTagName(o)[0];
+	a.async = 1;
+	a.src = g;
+	m.parentNode.insertBefore(a, m)
+})(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
-// // set yor id
-// ga('create', 'UA-65293382-4', 'auto');
-// ga('send', 'pageview');
+// set yor id
+ga('create', 'UA-65293382-4', 'auto');
+ga('send', 'pageview');
