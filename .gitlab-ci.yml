@@ -59,8 +59,7 @@ blc:
   - http-server dist/ -p 8080 > /dev/null &
   - sleep 5
   script:
-  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee blc.out
-  - "cat blc.out | grep '0 broken.'"
+  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee /dev/stderr | grep 'Finished!' | tail -1 | grep '0 broken.'
   tags:
   - docker
 
