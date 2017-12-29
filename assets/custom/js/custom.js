@@ -291,6 +291,8 @@
 					hiddenStyle: {
 						opacity: 0
 					},
+					layoutMode: 'fitRows',
+					resizable: false, // disable normal resizing
 					visibleStyle: {
 						opacity: 1
 					},
@@ -563,5 +565,5 @@
 })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
 
 // set yor id
-ga('create', 'UA-40696437-5', 'auto');
+ga('create', '', 'auto');
 ga('send', 'pageview');
