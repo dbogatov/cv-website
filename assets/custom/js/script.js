@@ -1,3 +1,5 @@
+var rendered = false;
+
 var resume = () => {
 
 	// check we are on a correct page
@@ -270,11 +272,17 @@ var portfolio = () => {
 			}
 		];
 
-		$countersContainer.empty();
-		countersData
-			.forEach(element =>
-				$countersContainer.append(countersTemplate(element))
-			);
+
+		if (!rendered) {
+			$countersContainer.empty();
+			countersData
+				.forEach(element =>
+					$countersContainer.append(countersTemplate(element))
+				);
+			rendered = true;
+		}
+
+
 
 		$postsContainer.empty();
 		postsData
