@@ -18,7 +18,7 @@ echo "Extracting files"
 unzip artifacts.zip
 
 echo "Moving file"
-mkdir -p $OLDPWD/wwwroot/assets/custom/docs/
-mv resume.pdf $OLDPWD/wwwroot/assets/custom/docs/resume.pdf
+mkdir -p $OLDPWD/dist/assets/custom/docs/
+mv resume.pdf $OLDPWD/dist/assets/custom/docs/resume.pdf
 
 echo "Done"
