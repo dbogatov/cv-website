@@ -22,7 +22,7 @@ put-resume:
   variables:
     GIT_STRATEGY: fetch
   script:
-  - ./put-resume.sh $TOKEN
+  - ./put-resume.sh "$TOKEN"
   artifacts:
     expire_in: 30 min
     paths:
