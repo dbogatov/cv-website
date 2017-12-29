@@ -69,8 +69,6 @@ blc:
 
 dockerify:
   stage: release
-  variables:
-    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
