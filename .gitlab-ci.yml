@@ -30,42 +30,42 @@ put-resume:
   tags:
   - docker
 
-# tidy:
-#   image: dbogatov/docker-images:tidy-latest
-#   stage: test
-#   variables:
-#     GIT_STRATEGY: none
-#   dependencies:
-#   - build
-#   # - put-resume
-#   before_script:
-#   - http-server dist/ -p 8080 > /dev/null &
-#   - sleep 5
-#   script:
-#   - curl -Ls http://localhost:8080/home.html | tidy -e
-#   - curl -Ls http://localhost:8080/academics.html | tidy -e
-#   - curl -Ls http://localhost:8080/contacts.html | tidy -e
-#   - curl -Ls http://localhost:8080/feedback.html | tidy -e
-#   - curl -Ls http://localhost:8080/portfolio.html | tidy -e
-#   - curl -Ls http://localhost:8080/resume.html | tidy -e
-#   tags:
-#   - docker
+tidy:
+  image: dbogatov/docker-images:tidy-latest
+  stage: test
+  variables:
+    GIT_STRATEGY: none
+  dependencies:
+  - build
+  # - put-resume
+  before_script:
+  - http-server dist/ -p 8080 > /dev/null &
+  - sleep 5
+  script:
+  - curl -Ls http://localhost:8080/home.html | tidy -e
+  - curl -Ls http://localhost:8080/academics.html | tidy -e
+  - curl -Ls http://localhost:8080/contacts.html | tidy -e
+  - curl -Ls http://localhost:8080/feedback.html | tidy -e
+  - curl -Ls http://localhost:8080/portfolio.html | tidy -e
+  - curl -Ls http://localhost:8080/resume.html | tidy -e
+  tags:
+  - docker
   
-# blc:
-#   image: dbogatov/docker-images:blc-latest
-#   stage: test
-#   variables:
-#     GIT_STRATEGY: none
-#   dependencies:
-#   - build
-#   - put-resume
-#   before_script:
-#   - http-server dist/ -p 8080 > /dev/null &
-#   - sleep 5
-#   script:
-#   - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee /dev/stderr | grep 'Finished!' | tail -1 | grep '0 broken.'
-#   tags:
-#   - docker
+blc:
+  image: dbogatov/docker-images:blc-latest
+  stage: test
+  variables:
+    GIT_STRATEGY: none
+  dependencies:
+  - build
+  - put-resume
+  before_script:
+  - http-server dist/ -p 8080 > /dev/null &
+  - sleep 5
+  script:
+  - blc --filter-level 3 --input http://localhost:8080/home.html -rog --exclude "*linkedin.*" | tee /dev/stderr | grep 'Finished!' | tail -1 | grep '0 broken.'
+  tags:
+  - docker
 
 dockerify:
   stage: release
@@ -89,7 +89,7 @@ upload-bu:
   - mkdir -p ~/.ssh/ && printf "%s\n" "$BUKEY" > ~/.ssh/id_rsa && chmod 0600 ~/.ssh/id_rsa
   - cp dist/home.html dist/index.html
   - ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
-  - scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
+  - scp -rp dist/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
   tags:
   - docker
   - home
