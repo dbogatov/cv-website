@@ -75,7 +75,7 @@ dockerify:
   - build
   - put-resume
   script:
-  - docker build -t registry.dbogatov.org/dbogatov/cv-website:dev .
+  - docker build -t registry.dbogatov.org/dbogatov/cv-website .
   - docker login -u gitlab-ci-token -p $CI_BUILD_TOKEN registry.dbogatov.org
   - docker push registry.dbogatov.org/dbogatov/cv-website:dev
   tags:
