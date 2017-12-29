@@ -87,7 +87,7 @@ upload-bu:
   - put-resume
   script:
   - mkdir -p ~/.ssh/
-  - printf "%s\n" $BUKEY > ~/.ssh/id_rsa
+  - printf "%s\n" "$BUKEY" > ~/.ssh/id_rsa
   - chmod 0600 ~/.ssh/id_rsa
   - cat ~/.ssh/id_rsa
   - cp dist/home.html dist/index.html
