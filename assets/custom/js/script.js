@@ -284,7 +284,9 @@ var portfolio = function () {
 
 		var resizeHandler = function () {
 
-			var minHeight = Math.min.apply(Math, $(".post-image").map(function () { return $(this).height() }));
+			var minHeight = Math.min.apply(Math, $(".post-image").map(function () {
+				return $(this).height()
+			}));
 			$(".post-image").css("max-height", minHeight);
 
 			var grid = $('.grid').isotope({
@@ -315,14 +317,14 @@ $(window).resize(function () {
 	if (!resizeTriggered) {
 		resizeTriggered = true;
 		window.setTimeout(
-			function () {	
+			function () {
 				portfolio();
 				resizeTriggered = false;
-			} , 500);
+			}, 500);
 	}
 });
 
-var all =  function() {
+var all = function () {
 	$("#credo").text(" \
 		I am a PhD student at Boston University on a Computer Science Data Science program. \
 		My primary interests are Data Science (databases, distributed computing, big data) and Web-development (back-end). \
@@ -330,10 +332,24 @@ var all =  function() {
 		So far I have had 2 part-time, 1 full-time \
 		jobs and I have graduated with high distinction from WPI CS program (class of 2017). \
 		Looking forward to new and exciting opportunities. \
-	");	
+	");
 
 	$("#catch-phrase").text("Don't find fault, find a remedy.");
 };
+
+var academics = function () {
+
+	// check we are on a correct page
+	if ($("#portfolio").length > 0) {
+
+		$.getJSON("/assets/custom/json/grades.json", function(json) {
+			
+			debugger;
+
+		});
+	}
+};
+
 
 $(document).ready(all);
 $(document).on('pjax:complete', all);

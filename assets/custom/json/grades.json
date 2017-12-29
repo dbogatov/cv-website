@@ -1,0 +1,382 @@
+[{
+		"school": "WPI",
+		"classes": [{
+				"requirement": "Major",
+				"gpa": 0,
+				"subrequirements": [{
+						"subsrequirement": "MQP",
+						"gpa": 0,
+						"classes": [{
+								"term": "A",
+								"year": 2015,
+								"title": "MQP Term A",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2015,
+								"title": "MQP Term B",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2016,
+								"title": "MQP Term C",
+								"grade": "A"
+							}
+						]
+					},
+					{
+						"subsrequirement": "Math",
+						"gpa": 0,
+						"classes": [{
+								"term": "A",
+								"year": 2013,
+								"title": "Calculus II",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2013,
+								"title": "Calculus III",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2014,
+								"title": "Calculus IV",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2014,
+								"title": "Applied Statistics",
+								"grade": "A"
+							},
+							{
+								"term": "D",
+								"year": 2014,
+								"title": "Ordinary Differential Equations",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2015,
+								"title": "Probability for Applications",
+								"grade": "A"
+							}
+						]
+					},
+					{
+						"subsrequirement": "Science",
+						"gpa": 0,
+						"classes": [{
+								"term": "C",
+								"year": 2015,
+								"title": "Molecularity",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2013,
+								"title": "Physics: General Mechanics",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2013,
+								"title": "Physics: General Electricity\t",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2014,
+								"title": "Physics: Intermediate Mechanics I",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2016,
+								"title": "Introduction to Electrical and Computer Engineering",
+								"grade": "A"
+							}
+						]
+					},
+					{
+						"subsrequirement": "CS Classes",
+						"gpa": 0,
+						"classes": [{
+								"term": "D",
+								"year": 2015,
+								"title": "Algorithms",
+								"grade": "A"
+							},
+							{
+								"term": "D",
+								"year": 2016,
+								"title": "Programming Languages",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2016,
+								"title": "Distributed Computing Systems",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2016,
+								"title": "Social Implications of Information Processing",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2016,
+								"title": "Tools and Techniques in Computer Network Security",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2015,
+								"title": "Database Systems",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2015,
+								"title": "Data Mining and Knowledge Discovery in Databases",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2015,
+								"title": "Webware: Computational Technology for Network Information Systems",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2015,
+								"title": "Operating Systems",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2014,
+								"title": "Software Engineering",
+								"grade": "B"
+							},
+							{
+								"term": "C",
+								"year": 2014,
+								"title": "Systems Programming",
+								"grade": "A"
+							},
+							{
+								"term": "D",
+								"year": 2014,
+								"title": "Machine Organization and Assembly Language",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2014,
+								"title": "Discrete Mathematics",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2013,
+								"title": "Introduction to Object Oriented Programming",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2013,
+								"title": "Introduction to Program Design",
+								"grade": "A"
+							}
+						]
+					}
+				]
+			},
+			{
+				"requirement": "Humanities",
+				"gpa": 0,
+				"subrequirements": [{
+						"subsrequirement": "Seminar",
+						"gpa": 0,
+						"classes": [{
+							"term": "D",
+							"year": 2016,
+							"title": "Practicum in Humanities: Visual Persuasion",
+							"grade": "A"
+						}]
+					},
+					{
+						"subsrequirement": "Breadth",
+						"gpa": 0,
+						"classes": [{
+								"term": "D",
+								"year": 2015,
+								"title": "Elements of Writing",
+								"grade": "A"
+							},
+							{
+								"term": "A",
+								"year": 2015,
+								"title": "Introduction to History of Technology",
+								"grade": "A"
+							}
+						]
+					},
+					{
+						"subsrequirement": "Depth",
+						"gpa": 0,
+						"classes": [{
+								"term": "C",
+								"year": 2016,
+								"title": "3D Modeling",
+								"grade": "A"
+							},
+							{
+								"term": "C",
+								"year": 2014,
+								"title": "Essentials of Art",
+								"grade": "A"
+							},
+							{
+								"term": "B",
+								"year": 2014,
+								"title": "Digital Image",
+								"grade": "A"
+							}
+						]
+					}
+				]
+			},
+			{
+				"requirement": "IQP",
+				"gpa": 0,
+				"subrequirements": [{
+					"subsrequirement": "IQP",
+					"gpa": 0,
+					"classes": [{
+							"term": "D",
+							"year": 2015,
+							"title": "IQP Term D",
+							"grade": "A"
+						},
+						{
+							"term": "C",
+							"year": 2015,
+							"title": "IQP Term C",
+							"grade": "A"
+						},
+						{
+							"term": "B",
+							"year": 2014,
+							"title": "IQP Term B",
+							"grade": "A"
+						}
+					]
+				}]
+			},
+			{
+				"requirement": "PE",
+				"gpa": 0,
+				"subrequirements": [{
+					"subsrequirement": "Physical Education",
+					"gpa": 0,
+					"classes": [{
+							"term": "B",
+							"year": 2016,
+							"title": "Badminton & Table Tennis",
+							"grade": "A"
+						},
+						{
+							"term": "D",
+							"year": 2015,
+							"title": "Soccer Term D",
+							"grade": "A"
+						},
+						{
+							"term": "B",
+							"year": 2015,
+							"title": "Soccer Term B",
+							"grade": "A"
+						},
+						{
+							"term": "B",
+							"year": 2014,
+							"title": "Volleyball & Squash",
+							"grade": "A"
+						}
+					]
+				}]
+			},
+			{
+				"requirement": "Minor",
+				"gpa": 0,
+				"subrequirements": [{
+					"subsrequirement": "Economics Minor",
+					"gpa": 0,
+					"classes": [{
+							"term": "D",
+							"year": 2016,
+							"title": "Intermediate Microeconomics",
+							"grade": "A"
+						},
+						{
+							"term": "B",
+							"year": 2016,
+							"title": "Independent Study: Advanced Economic Theory",
+							"grade": "A"
+						},
+						{
+							"term": "B",
+							"year": 2015,
+							"title": "Introduction to Microeconomics",
+							"grade": "A"
+						}
+					]
+				}]
+			}
+		]
+	},
+	{
+		"school": "BU",
+		"classes": [{
+			"requirement": "Master",
+			"gpa": 0,
+			"subrequirements": [{
+				"subsrequirement": "CS Classes",
+				"gpa": 0,
+				"classes": [{
+						"term": "Fall",
+						"year": 2017,
+						"title": "Advanced Algorithms",
+						"grade": "A"
+					},
+					{
+						"term": "Fall",
+						"year": 2017,
+						"title": "Cryptography",
+						"grade": "A"
+					},
+					{
+						"term": "Spring",
+						"year": 2018,
+						"title": "Advanced Operating Systems",
+						"grade": "I"
+					},
+					{
+						"term": "Spring",
+						"year": 2018,
+						"title": "Advanced Database Systems",
+						"grade": "I"
+					}
+				]
+			}]
+		}]
+	}
+]
