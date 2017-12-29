@@ -92,3 +92,4 @@ upload-bu:
   - scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
   tags:
   - docker
+  - home
