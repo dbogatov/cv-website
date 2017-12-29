@@ -1,11 +1,9 @@
 [{
 		"school": "WPI",
-		"classes": [{
+		"requirements": [{
 				"requirement": "Major",
-				"gpa": 0,
 				"subrequirements": [{
-						"subsrequirement": "MQP",
-						"gpa": 0,
+						"subrequirement": "MQP",
 						"classes": [{
 								"term": "A",
 								"year": 2015,
@@ -27,8 +25,7 @@
 						]
 					},
 					{
-						"subsrequirement": "Math",
-						"gpa": 0,
+						"subrequirement": "Math",
 						"classes": [{
 								"term": "A",
 								"year": 2013,
@@ -68,8 +65,7 @@
 						]
 					},
 					{
-						"subsrequirement": "Science",
-						"gpa": 0,
+						"subrequirement": "Science",
 						"classes": [{
 								"term": "C",
 								"year": 2015,
@@ -103,8 +99,7 @@
 						]
 					},
 					{
-						"subsrequirement": "CS Classes",
-						"gpa": 0,
+						"subrequirement": "CS Classes",
 						"classes": [{
 								"term": "D",
 								"year": 2015,
@@ -201,10 +196,8 @@
 			},
 			{
 				"requirement": "Humanities",
-				"gpa": 0,
 				"subrequirements": [{
-						"subsrequirement": "Seminar",
-						"gpa": 0,
+						"subrequirement": "Seminar",
 						"classes": [{
 							"term": "D",
 							"year": 2016,
@@ -213,8 +206,7 @@
 						}]
 					},
 					{
-						"subsrequirement": "Breadth",
-						"gpa": 0,
+						"subrequirement": "Breadth",
 						"classes": [{
 								"term": "D",
 								"year": 2015,
@@ -230,8 +222,7 @@
 						]
 					},
 					{
-						"subsrequirement": "Depth",
-						"gpa": 0,
+						"subrequirement": "Depth",
 						"classes": [{
 								"term": "C",
 								"year": 2016,
@@ -256,10 +247,8 @@
 			},
 			{
 				"requirement": "IQP",
-				"gpa": 0,
 				"subrequirements": [{
-					"subsrequirement": "IQP",
-					"gpa": 0,
+					"subrequirement": "IQP",
 					"classes": [{
 							"term": "D",
 							"year": 2015,
@@ -283,10 +272,10 @@
 			},
 			{
 				"requirement": "PE",
-				"gpa": 0,
+
 				"subrequirements": [{
-					"subsrequirement": "Physical Education",
-					"gpa": 0,
+					"subrequirement": "Physical Education",
+
 					"classes": [{
 							"term": "B",
 							"year": 2016,
@@ -316,10 +305,8 @@
 			},
 			{
 				"requirement": "Minor",
-				"gpa": 0,
 				"subrequirements": [{
-					"subsrequirement": "Economics Minor",
-					"gpa": 0,
+					"subrequirement": "Economics Minor",
 					"classes": [{
 							"term": "D",
 							"year": 2016,
@@ -345,12 +332,10 @@
 	},
 	{
 		"school": "BU",
-		"classes": [{
+		"requirements": [{
 			"requirement": "Master",
-			"gpa": 0,
 			"subrequirements": [{
-				"subsrequirement": "CS Classes",
-				"gpa": 0,
+				"subrequirement": "CS Classes",
 				"classes": [{
 						"term": "Fall",
 						"year": 2017,

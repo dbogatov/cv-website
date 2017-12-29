@@ -2440,11 +2440,11 @@ figure.effect-goliath:hover p {
 
 /* Isotope Portfolio */
 
-#portfolio .item-wrap, #blog .item-wrap, #portfolio-item-page .item-wrap {
+#portfolio .item-wrap, #academics .item-wrap, #portfolio-item-page .item-wrap {
 	margin-bottom: 10px;
 }
 
-#portfolio .grid, #blog .grid, #portfolio-item-page .grid {
+#portfolio .grid, #academics .grid, #portfolio-item-page .grid {
 	padding: 0;
 	-webkit-transition-property: height, width;
 	-moz-transition-property: height, width;
@@ -2453,18 +2453,18 @@ figure.effect-goliath:hover p {
 	transition-property: height, width;
 }
 
-#portfolio .grid .row, #blog .grid .row, #portfolio-item-page .grid .row {
+#portfolio .grid .row, #academics .grid .row, #portfolio-item-page .grid .row {
 	margin-left: 0;
 	margin-right: 0;
 }
 
-#portfolio .grid .row .grid-item, #blog .grid .row .grid-item, #portfolio-item-page .grid .row .grid-item {
+#portfolio .grid .row .grid-item, #academics .grid .row .grid-item, #portfolio-item-page .grid .row .grid-item {
 	border: none;
 	padding-right: 5px;
 	padding-left: 5px;
 }
 
-#portfolio .portfolio-caption, #blog .portfolio-caption, #portfolio-item-page .portfolio-caption {
+#portfolio .portfolio-caption, #academics .portfolio-caption, #portfolio-item-page .portfolio-caption {
 	width: 100%;
 	background: #f2f2f2;
 	padding: 12px 18px 21px 18px;
@@ -2472,42 +2472,42 @@ figure.effect-goliath:hover p {
 	font-size: 12px;
 }
 
-#portfolio .portfolio-caption p, #blog .portfolio-caption p, #portfolio-item-page .portfolio-caption p {
+#portfolio .portfolio-caption p, #academics .portfolio-caption p, #portfolio-item-page .portfolio-caption p {
 	margin: 0;
 	line-height: 18px;
 }
 
-#portfolio .portfolio-caption a, #blog .portfolio-caption a, #portfolio-item-page .portfolio-caption a {
+#portfolio .portfolio-caption a, #academics .portfolio-caption a, #portfolio-item-page .portfolio-caption a {
 	color: #bfbfbf;
 }
 
-#portfolio .portfolio-caption h4, #blog .portfolio-caption h4, #portfolio-item-page .portfolio-caption h4 {
+#portfolio .portfolio-caption h4, #academics .portfolio-caption h4, #portfolio-item-page .portfolio-caption h4 {
 	margin: 10px 0 5px 0;
 }
 
-#portfolio .portfolio-caption h4 a, #blog .portfolio-caption h4 a, #portfolio-item-page .portfolio-caption h4 a {
+#portfolio .portfolio-caption h4 a, #academics .portfolio-caption h4 a, #portfolio-item-page .portfolio-caption h4 a {
 	color: #c7c7c7;
 }
 
-#portfolio .portfolio-caption h4 a:hover, #portfolio .portfolio-caption h4 a:active, #portfolio .portfolio-caption h4 a:focus, #blog .portfolio-caption h4 a:hover, #blog .portfolio-caption h4 a:active, #blog .portfolio-caption h4 a:focus, #portfolio-item-page .portfolio-caption h4 a:hover, #portfolio-item-page .portfolio-caption h4 a:active, #portfolio-item-page .portfolio-caption h4 a:focus {
+#portfolio .portfolio-caption h4 a:hover, #portfolio .portfolio-caption h4 a:active, #portfolio .portfolio-caption h4 a:focus, #academics .portfolio-caption h4 a:hover, #academics .portfolio-caption h4 a:active, #academics .portfolio-caption h4 a:focus, #portfolio-item-page .portfolio-caption h4 a:hover, #portfolio-item-page .portfolio-caption h4 a:active, #portfolio-item-page .portfolio-caption h4 a:focus {
 	color: #e74c3c;
 	text-decoration: none;
 }
 
-#portfolio .portfolio-caption h4 a:visited, #blog .portfolio-caption h4 a:visited, #portfolio-item-page .portfolio-caption h4 a:visited {
+#portfolio .portfolio-caption h4 a:visited, #academics .portfolio-caption h4 a:visited, #portfolio-item-page .portfolio-caption h4 a:visited {
 	text-decoration: none;
 }
 
-#portfolio .port-filter ul, #blog .port-filter ul, #portfolio-item-page .port-filter ul {
+#portfolio .port-filter ul, #academics .port-filter ul, #portfolio-item-page .port-filter ul {
 	list-style: none;
 	padding: 0;
 }
 
-#portfolio .port-filter ul li, #blog .port-filter ul li, #portfolio-item-page .port-filter ul li {
+#portfolio .port-filter ul li, #academics .port-filter ul li, #portfolio-item-page .port-filter ul li {
 	display: inline-block;
 }
 
-#portfolio .port-filter ul li a, #blog .port-filter ul li a, #portfolio-item-page .port-filter ul li a {
+#portfolio .port-filter ul li a, #academics .port-filter ul li a, #portfolio-item-page .port-filter ul li a {
 	position: relative;
 	padding: 12px 24px;
 	margin-right: 1px;
@@ -2521,7 +2521,7 @@ figure.effect-goliath:hover p {
 	-ms-transition: all 0.35s ease-in-out;
 }
 
-#portfolio .port-filter ul li a:after, #blog .port-filter ul li a:after, #portfolio-item-page .port-filter ul li a:after {
+#portfolio .port-filter ul li a:after, #academics .port-filter ul li a:after, #portfolio-item-page .port-filter ul li a:after {
 	content: '';
 	position: absolute;
 	border-style: solid;
@@ -2540,42 +2540,42 @@ figure.effect-goliath:hover p {
 	-ms-transition: all 0.35s ease-in-out;
 }
 
-#portfolio .port-filter-dark ul li a, #blog .port-filter-dark ul li a, #portfolio-item-page .port-filter-dark ul li a {
+#portfolio .port-filter-dark ul li a, #academics .port-filter-dark ul li a, #portfolio-item-page .port-filter-dark ul li a {
 	background: rgba(255, 255, 255, 0.1);
 	color: #ffffff;
 }
 
-#portfolio .port-filter-dark ul li a:after, #blog .port-filter-dark ul li a:after, #portfolio-item-page .port-filter-dark ul li a:after {
+#portfolio .port-filter-dark ul li a:after, #academics .port-filter-dark ul li a:after, #portfolio-item-page .port-filter-dark ul li a:after {
 	border-color: #fff transparent;
 }
 
-#portfolio .port-filter-dark ul li a:hover, #portfolio .port-filter-dark ul li a:focus, #blog .port-filter-dark ul li a:hover, #blog .port-filter-dark ul li a:focus, #portfolio-item-page .port-filter-dark ul li a:hover, #portfolio-item-page .port-filter-dark ul li a:focus {
+#portfolio .port-filter-dark ul li a:hover, #portfolio .port-filter-dark ul li a:focus, #academics .port-filter-dark ul li a:hover, #academics .port-filter-dark ul li a:focus, #portfolio-item-page .port-filter-dark ul li a:hover, #portfolio-item-page .port-filter-dark ul li a:focus {
 	text-decoration: none;
 	background: #e74c3c;
 	color: #ffffff;
 }
 
-#portfolio .port-filter-dark ul li a:hover:after, #portfolio .port-filter-dark ul li a:focus:after, #blog .port-filter-dark ul li a:hover:after, #blog .port-filter-dark ul li a:focus:after, #portfolio-item-page .port-filter-dark ul li a:hover:after, #portfolio-item-page .port-filter-dark ul li a:focus:after {
+#portfolio .port-filter-dark ul li a:hover:after, #portfolio .port-filter-dark ul li a:focus:after, #academics .port-filter-dark ul li a:hover:after, #academics .port-filter-dark ul li a:focus:after, #portfolio-item-page .port-filter-dark ul li a:hover:after, #portfolio-item-page .port-filter-dark ul li a:focus:after {
 	border-color: #e74c3c transparent;
 	opacity: 1;
 }
 
-#portfolio .port-filter-light ul li a, #blog .port-filter-light ul li a, #portfolio-item-page .port-filter-light ul li a {
+#portfolio .port-filter-light ul li a, #academics .port-filter-light ul li a, #portfolio-item-page .port-filter-light ul li a {
 	background: #f7f7f7;
 	color: #3f3f3f;
 }
 
-#portfolio .port-filter-light ul li a:after, #blog .port-filter-light ul li a:after, #portfolio-item-page .port-filter-light ul li a:after {
+#portfolio .port-filter-light ul li a:after, #academics .port-filter-light ul li a:after, #portfolio-item-page .port-filter-light ul li a:after {
 	border-color: #fff transparent;
 }
 
-#portfolio .port-filter-light ul li a:hover, #portfolio .port-filter-light ul li a:focus, #blog .port-filter-light ul li a:hover, #blog .port-filter-light ul li a:focus, #portfolio-item-page .port-filter-light ul li a:hover, #portfolio-item-page .port-filter-light ul li a:focus {
+#portfolio .port-filter-light ul li a:hover, #portfolio .port-filter-light ul li a:focus, #academics .port-filter-light ul li a:hover, #academics .port-filter-light ul li a:focus, #portfolio-item-page .port-filter-light ul li a:hover, #portfolio-item-page .port-filter-light ul li a:focus {
 	text-decoration: none;
 	background: #e74c3c;
 	color: #ffffff;
 }
 
-#portfolio .port-filter-light ul li a:hover:after, #portfolio .port-filter-light ul li a:focus:after, #blog .port-filter-light ul li a:hover:after, #blog .port-filter-light ul li a:focus:after, #portfolio-item-page .port-filter-light ul li a:hover:after, #portfolio-item-page .port-filter-light ul li a:focus:after {
+#portfolio .port-filter-light ul li a:hover:after, #portfolio .port-filter-light ul li a:focus:after, #academics .port-filter-light ul li a:hover:after, #academics .port-filter-light ul li a:focus:after, #portfolio-item-page .port-filter-light ul li a:hover:after, #portfolio-item-page .port-filter-light ul li a:focus:after {
 	border-color: #e74c3c transparent;
 	opacity: 1;
 }
@@ -3530,7 +3530,7 @@ section h2, section h3 {
 
 /* ------------------------------------ Inner Sections */
 
-#resume, #portfolio, #portfolio2, #portfolio-item-page, #contacts, #feedback, #blog, #blog-list, #blogpost {
+#resume, #portfolio, #portfolio2, #portfolio-item-page, #contacts, #feedback, #academics, #academics-list, #academicspost {
 	background-color: #ffffff;
 	min-height: 500px;
 }
@@ -3630,26 +3630,36 @@ section h2, section h3 {
 
 /* ------------------------------------ Blog Page */
 
-#blog {
+#academics {
 	/* Blog masonry */
 }
 
-#blog .grid .row .grid-item {
+#academics hr {
+	margin-bottom: 45px;
+	border-top: 1px solid #f1f1f1;
+}
+
+#academics h3 {
+	margin-top: 20px;
+	margin-bottom: 10px
+}
+
+#academics .grid .row .grid-item {
 	border: none;
 	padding-right: 15px;
 	padding-left: 15px;
 	margin-bottom: 48px;
 }
 
-#blog .item-wrap {
+#academics .item-wrap {
 	margin-bottom: 10px;
 }
 
-#blog .item-wrap figure {
+#academics .item-wrap figure {
 	text-align: left;
 }
 
-#blog .item-wrap figure .popup-call {
+#academics .item-wrap figure .popup-call {
 	position: absolute;
 	z-index: 10;
 	top: 5px;
@@ -3661,54 +3671,54 @@ section h2, section h3 {
 	-ms-transition: all 0.5s ease-in-out;
 }
 
-#blog .item-wrap figure .popup-call a i:before {
+#academics .item-wrap figure .popup-call a i:before {
 	font-size: 38px;
 	color: #ffffff;
 }
 
-#blog .item-wrap figure:hover .popup-call {
+#academics .item-wrap figure:hover .popup-call {
 	opacity: 1;
 }
 
-#blog .item-wrap figure p {
+#academics .item-wrap figure p {
 	font-size: 13px;
 }
 
-#blog .item-wrap figure img {
+#academics .item-wrap figure img {
 	margin-bottom: 24px;
 }
 
-#blog .item-wrap figure figcaption {
+#academics .item-wrap figure figcaption {
 	padding: 0;
 	position: relative;
 	color: #dfdfdf;
 	text-transform: none;
 }
 
-#blog .item-wrap figure figcaption a {
+#academics .item-wrap figure figcaption a {
 	color: #3f3f3f;
 }
 
-#blog .item-wrap figure figcaption a:hover, #blog .item-wrap figure figcaption a:focus {
+#academics .item-wrap figure figcaption a:hover, #academics .item-wrap figure figcaption a:focus {
 	color: #e74c3c;
 	text-decoration: none;
 }
 
-#blog .item-wrap figure figcaption .post-meta {
+#academics .item-wrap figure figcaption .post-meta {
 	text-transform: uppercase;
 	color: #676767;
 	font-size: 11px;
 }
 
-#blog .item-wrap figure figcaption .post-meta span {
+#academics .item-wrap figure figcaption .post-meta span {
 	margin-right: 3px;
 }
 
-#blog .item-wrap figure figcaption .post-header {
+#academics .item-wrap figure figcaption .post-header {
 	text-transform: uppercase;
 }
 
-#blog .item-wrap figure figcaption .post-header h5 {
+#academics .item-wrap figure figcaption .post-header h5 {
 	font-size: 15px;
 	letter-spacing: 2px;
 	line-height: 23px;
@@ -3717,22 +3727,22 @@ section h2, section h3 {
 	margin-bottom: 14px;
 }
 
-#blog .item-wrap figure figcaption .post-entry {
+#academics .item-wrap figure figcaption .post-entry {
 	margin-bottom: 21px;
 }
 
-#blog .item-wrap figure figcaption .post-tag {
+#academics .item-wrap figure figcaption .post-tag {
 	color: #dfdfdf;
 	text-transform: uppercase;
 	font-size: 13px;
 }
 
-#blog .item-wrap figure figcaption .post-tag span {
+#academics .item-wrap figure figcaption .post-tag span {
 	margin-right: 10px;
 	letter-spacing: 1px;
 }
 
-#blog .item-wrap figure figcaption .post-more-link {
+#academics .item-wrap figure figcaption .post-more-link {
 	font-size: 11px;
 	font-weight: 600;
 	text-transform: uppercase;
@@ -3740,7 +3750,7 @@ section h2, section h3 {
 	line-height: 22px;
 }
 
-#blog .item-wrap figure figcaption .post-more-link a i {
+#academics .item-wrap figure figcaption .post-more-link a i {
 	margin-left: 5px;
 	transition: all 0.25s ease 0s;
 	-o-transition: all 0.25s ease 0s;
@@ -3748,7 +3758,7 @@ section h2, section h3 {
 	-webkit-transition: all 0.25s ease 0s;
 }
 
-#blog .blog-more[type="submit"] {
+#academics .blog-more[type="submit"] {
 	padding: 5px 24px;
 	width: auto;
 	border: 1px solid #6f6f6f !important;
@@ -3756,7 +3766,7 @@ section h2, section h3 {
 	color: #ffffff !important;
 }
 
-#blog .blog-more[type="submit"]:hover {
+#academics .blog-more[type="submit"]:hover {
 	border: 1px solid #e74c3c !important;
 	background: #e74c3c !important;
 	color: #ffffff !important;
@@ -3769,11 +3779,11 @@ section h2, section h3 {
 	margin-bottom: 80px;
 }
 
-#blog-list .post .post-detail, #blog-list .post .page-detail, #blog-list .page .post-detail, #blog-list .page .page-detail {
+#academics-list .post .post-detail, #academics-list .post .page-detail, #academics-list .page .post-detail, #academics-list .page .page-detail {
 	padding: 30px 0;
 }
 
-#blog-list .post .post-detail .meta-cat, #blog-list .post .page-detail .meta-cat, #blog-list .page .post-detail .meta-cat, #blog-list .page .page-detail .meta-cat {
+#academics-list .post .post-detail .meta-cat, #academics-list .post .page-detail .meta-cat, #academics-list .page .post-detail .meta-cat, #academics-list .page .page-detail .meta-cat {
 	display: inline-block;
 	background: #ffffff;
 	padding: 4px 16px;
@@ -3785,79 +3795,79 @@ section h2, section h3 {
 	border: 1px solid #a7a7a7;
 }
 
-#blog-list .post .post-detail h3.entry-title, #blog-list .post .page-detail h3.entry-title, #blog-list .page .post-detail h3.entry-title, #blog-list .page .page-detail h3.entry-title {
+#academics-list .post .post-detail h3.entry-title, #academics-list .post .page-detail h3.entry-title, #academics-list .page .post-detail h3.entry-title, #academics-list .page .page-detail h3.entry-title {
 	font-family: "Exo 2", sans-serif;
 	text-transform: uppercase;
 	line-height: 1.4em;
 }
 
-#blog-list .post .post-detail h2.entry-title.page-title, #blog-list .post .page-detail h2.entry-title.page-title, #blog-list .page .post-detail h2.entry-title.page-title, #blog-list .page .page-detail h2.entry-title.page-title {
+#academics-list .post .post-detail h2.entry-title.page-title, #academics-list .post .page-detail h2.entry-title.page-title, #academics-list .page .post-detail h2.entry-title.page-title, #academics-list .page .page-detail h2.entry-title.page-title {
 	font-family: "Exo 2", sans-serif;
 	line-height: 1.4em;
 }
 
-#blog-list .post .post-detail .metas, #blog-list .post .page-detail .metas, #blog-list .page .post-detail .metas, #blog-list .page .page-detail .metas {
+#academics-list .post .post-detail .metas, #academics-list .post .page-detail .metas, #academics-list .page .post-detail .metas, #academics-list .page .page-detail .metas {
 	font-size: 12px;
 	color: #8f8f8f;
 }
 
-#blog-list .post .post-detail .metas a, #blog-list .post .page-detail .metas a, #blog-list .page .post-detail .metas a, #blog-list .page .page-detail .metas a {
+#academics-list .post .post-detail .metas a, #academics-list .post .page-detail .metas a, #academics-list .page .post-detail .metas a, #academics-list .page .page-detail .metas a {
 	color: #8f8f8f;
 }
 
-#blog-list .post .post-detail .metas a:hover, #blog-list .post .page-detail .metas a:hover, #blog-list .page .post-detail .metas a:hover, #blog-list .page .page-detail .metas a:hover {
+#academics-list .post .post-detail .metas a:hover, #academics-list .post .page-detail .metas a:hover, #academics-list .page .post-detail .metas a:hover, #academics-list .page .page-detail .metas a:hover {
 	color: #e74c3c;
 }
 
-#blog-list .post .post-detail .metas .meta-date, #blog-list .post .page-detail .metas .meta-date, #blog-list .page .post-detail .metas .meta-date, #blog-list .page .page-detail .metas .meta-date {
+#academics-list .post .post-detail .metas .meta-date, #academics-list .post .page-detail .metas .meta-date, #academics-list .page .post-detail .metas .meta-date, #academics-list .page .page-detail .metas .meta-date {
 	margin-right: 8px;
 }
 
-#blog-list .post .post-detail .metas .meta-author, #blog-list .post .page-detail .metas .meta-author, #blog-list .page .post-detail .metas .meta-author, #blog-list .page .page-detail .metas .meta-author {
+#academics-list .post .post-detail .metas .meta-author, #academics-list .post .page-detail .metas .meta-author, #academics-list .page .post-detail .metas .meta-author, #academics-list .page .page-detail .metas .meta-author {
 	margin-right: 8px;
 }
 
-#blog-list .post .img-wrap, #blog-list .page .img-wrap {
+#academics-list .post .img-wrap, #academics-list .page .img-wrap {
 	position: relative;
 	display: block;
 	overflow: hidden;
 	margin-bottom: 24px;
 }
 
-#blog-list .post .post-excerpt, #blog-list .page .post-excerpt {
+#academics-list .post .post-excerpt, #academics-list .page .post-excerpt {
 	margin-bottom: 18px;
 	letter-spacing: 0.4px;
 }
 
-#blog-list .share-tag-box {
+#academics-list .share-tag-box {
 	margin-top: 80px;
 }
 
-#blog-list .share-tag-box .social li a i {
+#academics-list .share-tag-box .social li a i {
 	margin-left: 0;
 }
 
-#blog-list .share-tag-box h4 {
+#academics-list .share-tag-box h4 {
 	margin-bottom: 24px;
 	text-transform: uppercase;
 	font-family: "Exo 2", sans-serif;
 	letter-spacing: 1px;
 }
 
-#blog-list .share-tag-box .tags li {
+#academics-list .share-tag-box .tags li {
 	padding: 0;
 }
 
-#blog-list .share-tag-box .tags li a {
+#academics-list .share-tag-box .tags li a {
 	border: 1px solid #f7f7f7;
 	padding: 6px 12px;
 }
 
-#blog-list .share-tag-box .tags li a:hover {
+#academics-list .share-tag-box .tags li a:hover {
 	border-color: #dfdfdf;
 }
 
-#blog-list .author-info {
+#academics-list .author-info {
 	clear: both;
 	padding: 3em 2.5em 3.5em 2.5em;
 	background: white;
@@ -3865,11 +3875,11 @@ section h2, section h3 {
 	margin-top: 80px;
 }
 
-#blog-list .author-info .author-description {
+#academics-list .author-info .author-description {
 	padding-top: 0;
 }
 
-#blog-list .author-info .author-avatar .avatar {
+#academics-list .author-info .author-avatar .avatar {
 	float: left;
 	height: 90px;
 	width: 90px;
@@ -3877,7 +3887,7 @@ section h2, section h3 {
 	border: 4px solid #ffffff;
 }
 
-#blog-list .author-info .author-title {
+#academics-list .author-info .author-title {
 	clear: none;
 	font-size: 1.3rem;
 	font-family: "Exo 2", sans-serif;
@@ -3885,57 +3895,57 @@ section h2, section h3 {
 	margin: 0px;
 }
 
-#blog-list .author-info .author-title span {
+#academics-list .author-info .author-title span {
 	font-style: normal;
 	color: #d7d7d7;
 }
 
-#blog-list .author-info .author-bio {
+#academics-list .author-info .author-bio {
 	font-size: 13px;
 }
 
-#blog-list .author-info .author-link {
+#academics-list .author-info .author-link {
 	color: #dfdfdf;
 	text-decoration: none;
 }
 
-#blog-list .author-info .author-link:hover {
+#academics-list .author-info .author-link:hover {
 	color: #dfdfdf;
 }
 
-#blog-list #comments {
+#academics-list #comments {
 	margin-top: 80px;
 }
 
-#blog-list #comments img {
+#academics-list #comments img {
 	width: 64px;
 	height: 64px;
 }
 
-#blog-list #comments .media {
+#academics-list #comments .media {
 	margin-top: 60px;
 }
 
-#blog-list #comments .media .media-body .comment {
+#academics-list #comments .media .media-body .comment {
 	line-height: 1.6em;
 	font-size: 12px;
 }
 
-#blog-list #comments .post-data {
+#academics-list #comments .post-data {
 	font-size: 12px;
 	color: #e2839b;
 }
 
-#blog-list #comments .post-date {
+#academics-list #comments .post-date {
 	line-height: 1em;
 }
 
-#blog-list #comments .post-author {
+#academics-list #comments .post-author {
 	font-family: "Exo 2", sans-serif;
 	font-style: oblique;
 }
 
-#blog-list #comments .post-author a {
+#academics-list #comments .post-author a {
 	font-size: 18px;
 }
 
@@ -3995,42 +4005,42 @@ blockquote:before {
 
 /* Blog Post */
 
-#blogpost .post-meta {
+#academicspost .post-meta {
 	text-transform: uppercase;
 	color: #676767;
 	font-size: 13px;
 }
 
-#blogpost .post-meta span {
+#academicspost .post-meta span {
 	margin-right: 3px;
 }
 
-#blogpost .post-tag {
+#academicspost .post-tag {
 	color: #dfdfdf;
 	text-transform: uppercase;
 	font-size: 13px;
 	margin-top: 8px;
 }
 
-#blogpost .post-tag span {
+#academicspost .post-tag span {
 	margin-right: 10px;
 	letter-spacing: 1px;
 }
 
-#blogpost hr {
+#academicspost hr {
 	margin-bottom: 45px;
 }
 
-#blogpost #comments img {
+#academicspost #comments img {
 	width: 64px;
 	height: 64px;
 }
 
-#blogpost #comments .media {
+#academicspost #comments .media {
 	margin-top: 40px;
 }
 
-#blogpost #comments .post-author {
+#academicspost #comments .post-author {
 	text-transform: uppercase;
 	font-size: 13px;
 	font-weight: 600;

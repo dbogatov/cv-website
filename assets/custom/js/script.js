@@ -1,4 +1,4 @@
-var resume = function () {
+var resume = () => {
 
 	// check we are on a correct page
 	if ($("#resume").length > 0) {
@@ -133,20 +133,20 @@ var resume = function () {
 
 		$awardsContainer.empty();
 		awardsData
-			.forEach(function (element, index, array) {
-				$awardsContainer.append(awardsTemplate(element));
-			});
+			.forEach(element =>
+				$awardsContainer.append(awardsTemplate(element))
+			);
 
 		$timelineContainer.empty();
 		timelineData
-			.forEach(function (element, index, array) {
-				$timelineContainer.append(timelineTemplate(element));
-			});
+			.forEach(element =>
+				$timelineContainer.append(timelineTemplate(element))
+			);
 	}
 
 };
 
-var portfolio = function () {
+var portfolio = () => {
 
 	// check we are on a correct page
 	if ($("#portfolio").length > 0) {
@@ -272,21 +272,19 @@ var portfolio = function () {
 
 		$countersContainer.empty();
 		countersData
-			.forEach(function (element, index, array) {
-				$countersContainer.append(countersTemplate(element));
-			});
+			.forEach(element =>
+				$countersContainer.append(countersTemplate(element))
+			);
 
 		$postsContainer.empty();
 		postsData
-			.forEach(function (element, index, array) {
-				$postsContainer.append(postsTemplate(element));
-			});
+			.forEach(element =>
+				$postsContainer.append(postsTemplate(element))
+			);
 
-		var resizeHandler = function () {
+		var resizeHandler = () => {
 
-			var minHeight = Math.min.apply(Math, $(".post-image").map(function () {
-				return $(this).height()
-			}));
+			var minHeight = Math.min.apply(Math, $(".post-image").map(() => $(this).height()));
 			$(".post-image").css("max-height", minHeight);
 
 			var grid = $('.grid').isotope({
@@ -313,18 +311,18 @@ var portfolio = function () {
 };
 
 var resizeTriggered = false;
-$(window).resize(function () {
+$(window).resize(() => {
 	if (!resizeTriggered) {
 		resizeTriggered = true;
 		window.setTimeout(
-			function () {
+			() => {
 				portfolio();
 				resizeTriggered = false;
 			}, 500);
 	}
 });
 
-var all = function () {
+var all = () => {
 	$("#credo").text(" \
 		I am a PhD student at Boston University on a Computer Science Data Science program. \
 		My primary interests are Data Science (databases, distributed computing, big data) and Web-development (back-end). \
@@ -337,14 +335,133 @@ var all = function () {
 	$("#catch-phrase").text("Don't find fault, find a remedy.");
 };
 
-var academics = function () {
+var academics = () => {
 
 	// check we are on a correct page
-	if ($("#portfolio").length > 0) {
+	if ($("#academics").length > 0) {
 
-		$.getJSON("/assets/custom/json/grades.json", function(json) {
-			
-			debugger;
+		$.getJSON("/assets/custom/json/grades.json", grades => {
+
+			var classTemplate = _.template(" \
+				<tr class='<%= cellClass %>'> \
+					<td><%= term %></td> \
+					<td><%= year %></td> \
+					<td><%= title %></td> \
+					<td><%= grade %></td> \
+				</tr> \
+			")
+
+			var subreqTemplate = _.template(" \
+				<h4 class='text-center'><%= subrequirement %> (GPA: <%= gpa.toFixed(2) %>)</h4> \
+				<table class='table table-striped table-bordered table-hover'> \
+					<thead> \
+						<tr> \
+							<th class='header'>Term</th> \
+							<th class='header'>Year</th> \
+							<th class='header'>Title</th> \
+							<th class='header'>Grade</th> \
+						</tr> \
+					</thead> \
+					<tbody> \
+						<%= content %> \
+					</tbody> \
+				</table> \
+			");
+
+			var reqTemplate = _.template(" \
+				<h3><%= requirement %> Requirements (GPA: <%= gpa.toFixed(2) %>)</h3> \
+				<hr> \
+				<%= content %> \
+			");
+
+			var columnTemplate = _.template(" \
+				<div class='col-md-6'> \
+					<%= content %> \
+				</div> \
+			");
+
+			grades.forEach(school => {
+
+				school.requirements.forEach(requirement => {
+
+					requirement.subrequirements.forEach(subrequirement => {
+
+						subrequirement.classes.forEach(aclass => {
+							aclass.cellClass = aclass.grade === "I" ? "warning" : "success";
+							aclass.gpa = aclass.grade === "A" ? 4.0 : (aclass.grade === "B" ? 3.0 : 2.0);
+
+							aclass.sort =
+								10 * aclass.year + (
+									aclass.term === "C" || aclass.term === "Spring" ?
+									1 :
+									(aclass.term === "D" ?
+										2 :
+										(aclass.term === "A" || aclass.term === "Fall" ?
+											3 :
+											(aclass.term === "B" ? 4 : 0)
+										)
+									)
+								)
+
+						})
+
+						subrequirement.classes.sort((a, b) => a.sort < b.sort);
+
+						subrequirement.sum = subrequirement.classes.map(aclass => aclass.gpa).reduce((accum, self) => accum + self);
+						subrequirement.num = subrequirement.classes.length;
+						subrequirement.gpa = subrequirement.sum / subrequirement.num;
+					})
+
+					requirement.sum = requirement.subrequirements.map(subrequirement => subrequirement.sum).reduce((accum, self) => accum + self);
+					requirement.num = requirement.subrequirements.map(subrequirement => subrequirement.num).reduce((accum, self) => accum + self);
+					requirement.gpa = requirement.sum / requirement.num;
+
+					requirement.placementLeft = requirement.requirement === "Major";
+				})
+
+				school.sum = school.requirements.map(requirement => requirement.sum).reduce((accum, self) => accum + self);
+				school.num = school.requirements.map(requirement => requirement.num).reduce((accum, self) => accum + self);
+				school.gpa = school.sum / school.num;
+			});
+
+			grades.forEach(school => {
+
+				school.columns = [
+					school.requirements.filter(requirement => requirement.placementLeft),
+					school.requirements.filter(requirement => !requirement.placementLeft)
+				];
+
+			});
+
+			var wpiHtmlContent = grades
+				.filter(school => school.school === "WPI")[0]
+				.columns
+				.map(column => {
+					column.content = column
+						.map(requirement => {
+							requirement.content = requirement
+								.subrequirements
+								.map(subrequirement => {
+									subrequirement.content = subrequirement
+										.classes
+										.map(aclass => classTemplate(aclass))
+										.reduce((accum, self) => accum + self);
+
+									return subreqTemplate(subrequirement);
+								})
+								.reduce((accum, self) => accum + self);
+
+							return reqTemplate(requirement);
+						})
+						.reduce((accum, self) => accum + self);
+
+					return columnTemplate(column);
+				})
+				.reduce((accum, self) => accum + self);
+
+			$wpiGradesContainer = $("#wpi-grades");
+			$wpiGradesContainer.empty();
+			$wpiGradesContainer.html(wpiHtmlContent);
 
 		});
 	}
@@ -353,6 +470,9 @@ var academics = function () {
 
 $(document).ready(all);
 $(document).on('pjax:complete', all);
+
+$(document).ready(academics);
+$(document).on('pjax:complete', academics);
 
 $(document).ready(portfolio);
 $(document).on('pjax:complete', portfolio);
