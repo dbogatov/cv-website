@@ -14,6 +14,7 @@ curl \
 	"https://git.dbogatov.org/api/v4/projects/$PROJECT_ID/jobs/artifacts/$BRANCH/download?job=$JOB" \
 > artifacts.zip
 
+echo $TOKEN
 cat artifacts.zip
 
 echo "Extracting files"
