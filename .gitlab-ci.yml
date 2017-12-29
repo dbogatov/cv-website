@@ -89,7 +89,7 @@ upload-bu:
   - mkdir -p ~/.ssh/
   - printf "%s\n" $BUKEY > ~/.ssh/id_rsa
   - chmod 0600 ~/.ssh/id_rsa
-  # - cat ~/.ssh/id_rsa
+  - cat ~/.ssh/id_rsa
   - cp dist/home.html dist/index.html
   - ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
   - scp -rp wwwroot/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
