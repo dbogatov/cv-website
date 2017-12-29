@@ -1,5 +1,9 @@
 [{
 		"school": "WPI",
+		"fullname": "Worcester Polytechnic University",
+		"graduation": "February 2017",
+		"graduated": true,
+		"degree": "BS",
 		"requirements": [{
 				"requirement": "Major",
 				"subrequirements": [{
@@ -332,6 +336,10 @@
 	},
 	{
 		"school": "BU",
+		"fullname": "Boston University",
+		"graduation": "May 2023",
+		"graduated": false,
+		"degree": "PHD CS",
 		"requirements": [{
 			"requirement": "Master",
 			"subrequirements": [{

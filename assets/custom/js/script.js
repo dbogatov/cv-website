@@ -284,7 +284,9 @@ var portfolio = () => {
 
 		var resizeHandler = () => {
 
-			var minHeight = Math.min.apply(Math, $(".post-image").map(() => $(this).height()));
+			var minHeight = Math.min.apply(Math, $(".post-image").map(function () {
+				return $(this).height();
+			}));
 			$(".post-image").css("max-height", minHeight);
 
 			var grid = $('.grid').isotope({
@@ -375,9 +377,28 @@ var academics = () => {
 			");
 
 			var columnTemplate = _.template(" \
-				<div class='col-md-6'> \
+				<div class='col-md-6 col-md-offset-<%= offset %>'> \
 					<%= content %> \
 				</div> \
+			");
+
+			var schoolTemplate = _.template(" \
+				<div class='dividewhite6'></div> \
+				<div data-animation-origin='top' data-animation-duration='400' data-animation-delay='300' data-animation-distance='30px'> \
+						<h3 class='font-accident-two-normal uppercase text-center'><%= fullname %> - <%= degree %></h3> \
+						<div class='dividewhite1'></div> \
+						<p class='small text-center fontcolor-medium'> \
+							<%= graduated ? \"Graduation\" : \"Expected graduation\" %> date - <%= graduation %> \
+							<br> \
+							GPA: <%= gpa.toFixed(2) %> \
+							<br> \
+							This report is generated from <a target=\"_blank\" href=\"/assets/custom/json/grades.json\">this JSON file<a/>.\
+						</p> \
+					</div> \
+				<div class='row'> \
+					<%= content %> \
+				</div> \
+				<div class='dividewhite8'></div> \
 			");
 
 			grades.forEach(school => {
@@ -407,8 +428,13 @@ var academics = () => {
 
 						subrequirement.classes.sort((a, b) => a.sort < b.sort);
 
-						subrequirement.sum = subrequirement.classes.map(aclass => aclass.gpa).reduce((accum, self) => accum + self);
-						subrequirement.num = subrequirement.classes.length;
+						subrequirement.sum = subrequirement
+							.classes
+							.filter(aclass => aclass.grade !== "I")
+							.map(aclass => aclass.gpa)
+							.reduce((accum, self) => accum + self);
+
+						subrequirement.num = subrequirement.classes.filter(aclass => aclass.grade !== "I").length;
 						subrequirement.gpa = subrequirement.sum / subrequirement.num;
 					})
 
@@ -431,37 +457,52 @@ var academics = () => {
 					school.requirements.filter(requirement => !requirement.placementLeft)
 				];
 
+				school.columns = school.columns.filter(column => column.length > 0);
+
 			});
 
-			var wpiHtmlContent = grades
-				.filter(school => school.school === "WPI")[0]
-				.columns
-				.map(column => {
-					column.content = column
-						.map(requirement => {
-							requirement.content = requirement
-								.subrequirements
-								.map(subrequirement => {
-									subrequirement.content = subrequirement
-										.classes
-										.map(aclass => classTemplate(aclass))
+			var gradesHtmlContent = grades
+				.map(school => {
+					school.content = school
+						.columns
+						.map(column => {
+							column.offset = school.school === "BU" ? "3" : "0";
+
+							column.content = column
+								.map(requirement => {
+									requirement.content = requirement
+										.subrequirements
+										.map(subrequirement => {
+											subrequirement.content = subrequirement
+												.classes
+												.map(aclass => classTemplate(aclass))
+												.reduce((accum, self) => accum + self);
+
+											return subreqTemplate(subrequirement);
+										})
 										.reduce((accum, self) => accum + self);
 
-									return subreqTemplate(subrequirement);
+									return reqTemplate(requirement);
 								})
 								.reduce((accum, self) => accum + self);
 
-							return reqTemplate(requirement);
+							return columnTemplate(column);
 						})
-						.reduce((accum, self) => accum + self);
+						.reduce((accum, self) => accum + self)
 
-					return columnTemplate(column);
-				})
-				.reduce((accum, self) => accum + self);
+					return {
+						content: schoolTemplate(school),
+						school: school.school
+					}
+				});
 
-			$wpiGradesContainer = $("#wpi-grades");
-			$wpiGradesContainer.empty();
-			$wpiGradesContainer.html(wpiHtmlContent);
+			$wpiContainer = $("#wpi");
+			$wpiContainer.empty();
+			$wpiContainer.html(gradesHtmlContent.filter(school => school.school === "WPI")[0].content);
+
+			$buContainer = $("#bu");
+			$buContainer.empty();
+			$buContainer.html(gradesHtmlContent.filter(school => school.school === "BU")[0].content);
 
 		});
 	}

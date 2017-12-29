@@ -9,6 +9,7 @@ cp -r assets/ dist/assets
 
 sed -e '/__CONTENT__/,$d' src/html/layout.html > dist/header.html
 sed -n -e '/__CONTENT__/,$p' src/html/layout.html | tail -n +2 > dist/footer.html
+sed -i -- "s/__COMMIT__/$(cat version.txt)/g" dist/footer.html
 
 for page in src/html/*.html; 
 do 

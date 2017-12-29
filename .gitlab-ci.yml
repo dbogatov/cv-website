@@ -7,6 +7,7 @@ build:
   image: dbogatov/docker-images:alpine-extras-latest
   stage: build
   script:
+  - printf "%s" $(echo $CI_BUILD_REF | cut -c1-8) > version.txt
   - ./build.sh
   artifacts:
     expire_in: 30 min
