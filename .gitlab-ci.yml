@@ -86,6 +86,7 @@ upload-bu:
   - build
   - put-resume
   script:
+  - mkdir -p ~/.ssh/
   - echo $BUKEY > ~/.ssh/id_rsa
   - cp dist/home.html dist/index.html
   - ssh -o StrictHostKeyChecking=no dmytro@csa1.bu.edu rm -rf /home/grad2/dmytro/public_html/*
