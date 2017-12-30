@@ -216,56 +216,56 @@ var portfolio = () => {
 
 		var postsData = [{
 				source: "https://github.com/dbogatov/status-site",
-				image: "/assets/custom/images/status-site.png",
+				image: "assets/custom/images/status-site.png",
 				title: "Status Site",
 				url: "https://status.dbogatov.org",
 				tags: ["web"]
 			},
 			{
 				source: "https://github.com/dbogatov/shevastream",
-				image: "/assets/custom/images/shevastream.png",
+				image: "assets/custom/images/shevastream.png",
 				title: "ShevaStream",
 				url: "https://shevastream.com",
 				tags: ["web"]
 			},
 			{
 				source: "https://github.com/dbogatov/legacy-website",
-				image: "/assets/custom/images/mandelbrot.png",
+				image: "assets/custom/images/mandelbrot.png",
 				title: "Mandelbrot",
 				url: "https://legacy.dbogatov.org/Project/Mandelbrot",
 				tags: ["web"]
 			},
 			{
 				source: "https://github.com/WPIMHTC",
-				image: "/assets/custom/images/matters-proj.png",
+				image: "assets/custom/images/matters-proj.png",
 				title: "MATTERS",
 				url: "http://matters.mhtc.org",
 				tags: ["web", "research"]
 			},
 			{
 				source: "https://github.com/dbogatov/legacy-website",
-				image: "/assets/custom/images/pentago.png",
+				image: "assets/custom/images/pentago.png",
 				title: "Pentago",
 				url: "https://legacy.dbogatov.org/Project/Pentago",
 				tags: ["web"]
 			},
 			{
 				source: "https://github.com/dbogatov/monopoly-banker",
-				image: "/assets/custom/images/banker.png",
+				image: "assets/custom/images/banker.png",
 				title: "Banker Game Assistant",
 				url: "https://legacy.dbogatov.org/Project/Banker",
 				tags: ["ios"]
 			},
 			{
 				source: "https://github.com/dbogatov/legacy-website",
-				image: "/assets/custom/images/minesweeper.png",
+				image: "assets/custom/images/minesweeper.png",
 				title: "Minesweeper",
 				url: "https://legacy.dbogatov.org/Project/Minesweeper",
 				tags: ["web"]
 			},
 			{
 				source: "https://github.com/dbogatov/wpi-calendar-event-creator",
-				image: "/assets/custom/images/wpicalendar.png",
+				image: "assets/custom/images/wpicalendar.png",
 				title: "WPI Event Creator",
 				url: "https://legacy.dbogatov.org/Project/WPICalendar",
 				tags: ["ios"]
@@ -350,7 +350,7 @@ var academics = () => {
 	// check we are on a correct page
 	if ($("#academics").length > 0) {
 
-		$.getJSON("/assets/custom/json/grades.json", grades => {
+		$.getJSON("assets/custom/json/grades.json", grades => {
 
 			var classTemplate = _.template(" \
 				<tr class='<%= cellClass %>'> \
@@ -400,7 +400,7 @@ var academics = () => {
 							<br> \
 							GPA: <%= gpa.toFixed(2) %> \
 							<br> \
-							This report is generated from <a target=\"_blank\" href=\"/assets/custom/json/grades.json\">this JSON file<a/>.\
+							This report is generated from <a target=\"_blank\" href=\"assets/custom/json/grades.json\">this JSON file<a/>.\
 						</p> \
 					</div> \
 				<div class='row'> \

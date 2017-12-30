@@ -18,31 +18,31 @@
 }
 
 .timeline-01 {
-  background: url("/assets/custom/images/wpi.jpg");
+  background: url("../../images/wpi.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .timeline-02 {
-  background: url("/assets/custom/images/tradestation.jpg");
+  background: url("../../images/tradestation.jpg");
   background-position: center;
   background-size: cover;
 }
 
 .timeline-03 {
-  background: url("/assets/custom/images/matters.png");
+  background: url("../../images/matters.png");
   background-position: center;
   background-size: cover;
 }
 
 .timeline-04 {
-  background: url("/assets/custom/images/redwoodeda.png");
+  background: url("../../images/redwoodeda.png");
   background-position: center;
   background-size: cover;
 }
 
 .timeline-05 {
-  background: url("/assets/custom/images/bu.jpg");
+  background: url("../../images/bu.jpg");
   background-position: center;
   background-size: cover;
 }
