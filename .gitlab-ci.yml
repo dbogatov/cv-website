@@ -99,6 +99,8 @@ upload-bu:
 pages:
   image: dbogatov/docker-images:alpine-extras-latest
   stage: release
+  script:
+  - "Uploading files to pages"
   artifacts:
     expire_in: 30 min
     paths:
