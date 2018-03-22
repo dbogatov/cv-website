@@ -95,7 +95,6 @@ upload-bu:
   - scp -rp dist/* dmytro@csa1.bu.edu:/home/grad2/dmytro/public_html/
   tags:
   - docker
-  - home
   only:
   - master
 
