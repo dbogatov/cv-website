@@ -69,6 +69,8 @@ blc:
 
 dockerify:
   stage: release
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
@@ -82,6 +84,8 @@ dockerify:
 upload-bu:
   image: dbogatov/docker-images:alpine-extras-latest
   stage: release
+  variables:
+    GIT_STRATEGY: none
   dependencies:
   - build
   - put-resume
@@ -98,6 +102,8 @@ upload-bu:
 
 pages:
   image: dbogatov/docker-images:alpine-extras-latest
+  variables:
+    GIT_STRATEGY: none
   stage: release
   script:
   - "Uploading files to pages"
