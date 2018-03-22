@@ -104,11 +104,12 @@ pages:
     GIT_STRATEGY: none
   stage: release
   script:
+  - mv dist/ public/
   - echo "Uploading files to pages"
   artifacts:
     expire_in: 30 min
     paths:
-    - dist
+    - public
   dependencies:
   - build
   - put-resume
