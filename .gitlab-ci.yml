@@ -93,3 +93,20 @@ upload-bu:
   tags:
   - docker
   - home
+  only:
+  - master
+
+pages:
+  image: dbogatov/docker-images:alpine-extras-latest
+  stage: release
+  artifacts:
+    expire_in: 30 min
+    paths:
+    - dist
+  dependencies:
+  - build
+  - put-resume
+  tags:
+  - docker
+  only:
+  - master
