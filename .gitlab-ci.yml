@@ -37,7 +37,6 @@ tidy:
     GIT_STRATEGY: none
   dependencies:
   - build
-  # - put-resume
   before_script:
   - http-server dist/ -p 8080 > /dev/null &
   - sleep 5
@@ -106,7 +105,7 @@ pages:
     GIT_STRATEGY: none
   stage: release
   script:
-  - "Uploading files to pages"
+  - echo "Uploading files to pages"
   artifacts:
     expire_in: 30 min
     paths:
